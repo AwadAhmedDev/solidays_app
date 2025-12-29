@@ -1,0 +1,12 @@
+services:
+  node_js:
+    image: node:25
+    ports:
+      - 5001:5001 # liveserver
+      - 5174:5174 # vite
+      - 3001:3001 # API
+    volumes:
+      - ./code:/app
+    tty: true
+    working_dir: /app
+    restart: always

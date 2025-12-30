@@ -1,0 +1,28 @@
+.hero {
+  background-image: url("../../assets/heroSection.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    padding: 0 5rem;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+  
+
+.heroLeft {
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroRight {
+  flex: 1;
+}
+
+.socials {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+}

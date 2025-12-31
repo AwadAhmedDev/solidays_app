@@ -1,11 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import Navbar from "./components/navbar/Navbar"
 import {Route, Routes} from "react-router"
 import Events from "./pages/evenement/Events"
 import Festival from "./pages/festival/Festival"
 import Billeterie from "./pages/billeterie/Billeterie"
+import ArtistBanner from "./components/artistbanner/artistbanner"
 
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
         <Route path="/festival" element={< Festival/>} />
         <Route path="/billeterie" element={<Billeterie />} />
       </Routes>
+      <ArtistBanner/>
     </div>
   )
 }

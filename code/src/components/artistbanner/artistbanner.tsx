@@ -1,16 +1,16 @@
 import styles from "./artistbanner.module.css";
+import {NavLink} from "react-router"
 
 const ArtistBanner = () => {
     return (
         <div className={styles.artistbanner}>
             <ul className={styles.artistlist}>
                 <li>
-                
-                    BIGFLO & OLI
-                 
-                   
+                    <NavLink to={"/"}>  BIGFLO & OLI</NavLink>
                 </li>
-                <li>GIMS</li>
+                <li>
+                     <NavLink to={"/"}>  GIMS </NavLink>
+                   </li>
                 <li>INO CASABLANCA</li>
                 <li>L2B</li>
                 <li>LA MANO 1.9</li>

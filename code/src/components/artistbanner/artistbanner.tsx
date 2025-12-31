@@ -7,6 +7,8 @@ const ArtistBanner = () => {
                 <li>
                 
                     BIGFLO & OLI
+                 
+                   
                 </li>
                 <li>GIMS</li>
                 <li>INO CASABLANCA</li>

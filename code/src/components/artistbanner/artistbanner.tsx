@@ -1,4 +1,4 @@
-import styles from "./artistbanner.module.css";
+import styles from "./artistbanner.module.css"
 import {NavLink} from "react-router"
 
 const ArtistBanner = () => {
@@ -6,10 +6,10 @@ const ArtistBanner = () => {
         <div className={styles.artistbanner}>
             <ul className={styles.artistlist}>
                 <li>
-                    <NavLink to={"/"}>  BIGFLO & OLI</NavLink>
+                    <NavLink to="/concert">  BIGFLO & OLI</NavLink>
                 </li>
                 <li>
-                     <NavLink to={"/"}>  GIMS </NavLink>
+                     <NavLink to="/concert">  GIMS </NavLink>
                    </li>
                 <li>INO CASABLANCA</li>
                 <li>L2B</li>

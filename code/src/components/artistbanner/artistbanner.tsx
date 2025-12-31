@@ -11,15 +11,35 @@ const ArtistBanner = () => {
                 <li>
                      <NavLink to="/concert">  GIMS </NavLink>
                    </li>
-                <li>INO CASABLANCA</li>
-                <li>L2B</li>
-                <li>LA MANO 1.9</li>
-                <li>LA RVFLEUSE</li>
-                <li>MOSIMANN</li>
-                <li>NICO MORENO</li>
-                <li>ORELSAN</li>
-                <li>ZARA LARSSON</li>
-                <li> & MANY MORE</li>
+                <li>
+                <NavLink to="/concert">  INO CASABLANCA </NavLink>
+                   
+                </li>
+                <li>
+                    <NavLink to="/concert"> L2B </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/concert"> LA MANO 1.9 </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/concert"> LA RVFLEUSE</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/concert"> MOSIMANN </NavLink>
+                    
+                </li>
+                <li>
+                    <NavLink to="/concert"> NICO MORENO </NavLink>
+                    </li>
+                <li>
+                    <NavLink to="/concert"> ORELSAN </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/concert"> ZARA LARSSON </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/concert"> & MANY MORE </NavLink>
+                  </li>
                 </ul>
         </div>
     );

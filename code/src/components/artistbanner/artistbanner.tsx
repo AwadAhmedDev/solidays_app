@@ -1,4 +1,4 @@
-import styles from "./artistbanner.module.css";
+import styles from "./artistbanner.module.css"
 
 const ArtistBanner = () => {
     return (

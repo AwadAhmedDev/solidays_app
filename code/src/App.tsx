@@ -5,6 +5,7 @@ import Events from "./pages/evenement/Events"
 import Festival from "./pages/festival/Festival"
 import Billeterie from "./pages/billeterie/Billeterie"
 import ArtistBanner from "./components/artistbanner/artistbanner"
+import Hero from "./components/hero/Hero"
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="app">
       <Navbar />
+      <Hero />
       <Routes>
         <Route path="/evenement" element={<Events />} />
         <Route path="/festival" element={< Festival/>} />

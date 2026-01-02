@@ -6,6 +6,7 @@ import Festival from "./pages/festival/Festival"
 import Billeterie from "./pages/billeterie/Billeterie"
 import MentionLegales from "./pages/mention_legale/MentionLegales"
 import Home from "./pages/home/Home"
+import Footer from "./components/footer/Footer"
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/billeterie" element={<Billeterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
       </Routes>
-       {/* <Footer /> */}
+       <Footer />
     </div>
   )
 }

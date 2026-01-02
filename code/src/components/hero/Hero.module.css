@@ -52,6 +52,19 @@
     font-size: 1.5rem;
     margin-bottom: 2rem;
 }
+.heroSubtitle::after {
+    content: "Solidays c'est le festival.";
+    padding-left: 0.5rem;
+    margin-bottom: 2rem;
+    animation: textFadeIn 5s ease-in-out infinite;
+}
+@keyframes textFadeIn {
+    0%, 25% { content: "Solidays c'est le festival."; }
+    26%, 50% { content: "En achetant un pass Solidays,"; }
+    51%, 75% { content: "vous aurez accès à tous les événements du festival."; }
+    76%, 100% { content: "25000 PASS 3J apartir de 39$."; }
+}
+/* vous aurez accès à tous les événements du festival */
 br {
     line-height: 1.5;
     padding: 0.5rem 0;

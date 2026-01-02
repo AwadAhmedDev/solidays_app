@@ -1,5 +1,6 @@
 import styles from "./Hero.module.css"
 import heroImage from "../../assets/heroSection.png"
+import { NavLink } from "react-router-dom"
 
 export default function Hero() {
   return (
@@ -8,7 +9,12 @@ export default function Hero() {
               <div className={styles.heroContent}>
                 <h1 className={styles.heroTitle}>POUR NOEL </h1>
                 <p className={styles.heroSubtitle}>Offrez (vous) <br /> UN PASS <br />SOLIDAYS</p>
-                <button className={styles.heroButton}>Get Started</button>
+
+                <div className={styles.heroButtonContainer}>
+                   <NavLink to="/" className={styles.heroButton}>
+                   Get Started
+                   </NavLink>
+                </div>
               </div>
               <div className={styles.heroImage}>
                 {/* Image or graphic can be placed here */}

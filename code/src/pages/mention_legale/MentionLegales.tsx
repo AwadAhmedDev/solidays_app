@@ -4,10 +4,10 @@ import mention_2 from "../../assets/mention_2.png"
 
 export default function MentionLegales() {
   return (
-      <div>
+      <div className={styles.mentionLegalesPage}>
           <div className={styles.mentionLegales}>
-          <div>
-              <img src={mentionLegaleImage} alt="" />
+          <div className={styles.mentionLegaleImages}>
+              <img src={mentionLegaleImage} alt="mention Legale Image" />
           </div>
       <h1>Mentions Légales</h1>
       <h2>Éditeur</h2>
@@ -109,7 +109,7 @@ export default function MentionLegales() {
         pas respectés ou que le dispositif vidéo n’est pas conforme aux règles de protection des
         données, vous pouvez adresser une réclamation en ligne à la CNIL ou par courrier postal.
       </p>
-          </div>
+    </div>
           <div className={styles.mentionLegales}>
               <h1>À découvrir</h1>
 

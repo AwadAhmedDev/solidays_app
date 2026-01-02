@@ -1,3 +1,9 @@
+.mentionLegalesPage {
+  background-color: #ececec;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 20px;
+}
 .mentionLegales {
   max-width: 900px;
   margin: 0 auto;
@@ -7,6 +13,12 @@
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.mentionLegaleImages img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
   border-radius: 8px;
 }
 .mentionLegales h1 {
@@ -79,8 +91,8 @@
   bottom: 10px;
   left: 10px;
   padding: 8px 15px;
-  background-color: #ff4c4c;
-  color: white;
+  background-color: #f9f9f9;
+  color: #000;
   border: none;
   border-radius: 5px;
   font-weight: bold;
@@ -127,4 +139,33 @@
 .overlayCaption .highlight {
   color: #ff4c4c;
   font-weight: bold;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+ .mentionLegaleImages {
+    padding: 20px 10px;
+    width: 50%;
+  }
+  .imageGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: auto;
+  }
+
+  .image,
+  .image2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .overlayCaption {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
 }

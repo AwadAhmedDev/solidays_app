@@ -28,7 +28,7 @@ export default function Footer() {
           <h3>Newsletter</h3>
           <form>
             <input type="email" placeholder="votre@email.com" />
-            <button type="submit">OK</button>
+            <button className={styles.footerNewsletterButton} type="submit">OK</button>
           </form>
         </div>
 

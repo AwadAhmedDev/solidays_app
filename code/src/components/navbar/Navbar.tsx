@@ -59,7 +59,11 @@ export default function Navbar() {
                     className={({ isActive }) =>
                         `${isActive ? styles.activeLink : styles.navLinks}`
                       }>Billeterie</NavLink>
-                   </li>
+            </li>
+            <li><NavLink to="/mention_legale"         
+              className={({ isActive }) =>    
+                 `${isActive ? styles.activeLink : styles.navLinks}`       
+                      }>Mentions Légales</NavLink></li>   
                 </ul>
             </nav>
         <div onClick={toggleMenu} className={styles.hamburgerMenu}>
@@ -82,7 +86,8 @@ export default function Navbar() {
               <ul className={styles.navLinks}>
                 <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/evenement" >Events</NavLink></li>
                 <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
-                <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billeterie" >Billeterie</NavLink></li>
+            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billeterie" >Billeterie</NavLink></li>
+            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
               </ul>
             </div>
           )}

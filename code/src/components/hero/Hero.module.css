@@ -1,0 +1,92 @@
+.heroSection {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.95;
+    background: linear-gradient(
+    120deg,
+    rgb(10,15,180),
+    rgb(30,40,240),
+    rgb(140,40,180),
+    rgb(20,25,200)
+  );
+  background-size: 400% 400%;
+  animation: galaxy 12s ease infinite;
+}
+@keyframes galaxy {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.heroContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0 12rem;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    margin-right: 2rem;
+}
+
+.heroTitle {
+    font-size: 3rem;
+    font-weight: bold;                  
+    margin-bottom: 1rem;
+}
+.heroSubtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+br {
+    line-height: 1.5;
+    padding: 0.5rem 0;
+}
+.heroButton {   
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.heroButton:hover {
+    background-color: #e84150;
+}
+.heroImage  {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;   
+    overflow: hidden;
+    z-index: 1;
+}
+.heroImage img {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+}

@@ -8,7 +8,10 @@ export default function Hero() {
           <div className={styles.heroContainer}>
               <div className={styles.heroContent}>
                 <h1 className={styles.heroTitle}>POUR NOEL </h1>
-                <p className={styles.heroSubtitle}>Offrez (vous) <br /> UN PASS <br />SOLIDAYS</p>
+          <span className={styles.heroSubtitle}>Offrez (vous) <br /> UN PASS <br />SOLIDAYS</span>
+          {/* <span>
+            Solidays c'est le festival. <br />En achetant un pass Solidays, <br /> vous aurez accès à tous les événements du festival.
+          </span> */}
 
                 <div className={styles.heroButtonContainer}>
                    <NavLink to="/" className={styles.heroButton}>

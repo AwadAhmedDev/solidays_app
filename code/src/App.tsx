@@ -21,6 +21,7 @@ function App() {
         <Route path="/billeterie" element={<Billeterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
       </Routes>
+    
        <Footer />
     </div>
   )

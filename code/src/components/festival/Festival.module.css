@@ -1,0 +1,59 @@
+.festival {
+    background:linear-gradient(#030d31,#362686, #3d4eaf);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-items: center;
+    padding: 2rem;
+    
+}
+h2,p{
+    color: #7b90ff;
+}
+.con {
+   width: 100%;
+   display: flex;
+   gap: 4rem;
+   flex-wrap: wrap;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   padding: 3rem;
+}
+.festivalcon {
+    width: 500px;
+    position: relative;
+}
+.festivalcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4 ease-in;
+  }
+  
+.festivalcard {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.8s ease;
+
+}
+.festivalcard h3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    color: white;
+}
+
+
+.festival h2:hover {
+    color: white;
+}
+
+.festivalcard img:hover {
+    transform: scale(1.3);
+}

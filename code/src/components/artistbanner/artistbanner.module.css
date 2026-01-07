@@ -1,0 +1,77 @@
+.artistbanner {
+   width: 100vw;
+   min-height: 90vh;
+   display: grid;
+   grid-template-columns: 40% 60%;
+   background-size: cover;
+   background-position: right right right;
+   background-repeat: no-repeat;
+   position: relative;
+
+}
+
+.artistlist {
+    padding: 3rem;
+    align-self: center;
+    line-height: 1;
+}
+
+li {
+    list-style: none;
+    text-transform: capitalize;
+    display: flex;
+}
+.link {
+    font-size: 1.5rem;
+    font-weight: bold;
+   
+}
+
+.artistbanner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+  
+  .artistlist {
+    position: relative;
+    z-index: 1;
+  }
+
+.link:hover {
+    background-color: white;
+    color: black;
+}
+
+ /* mobile carrousel */
+
+ @media (max-width: 768px) {
+
+    .artistbanner {
+        width: 100vw;         
+        min-height: 100vh;   
+        margin: 0;            
+        padding: 0;
+        display: block;      
+        position: relative;
+        left: 50%;           
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background-color: rgb(16, 16, 95);
+      }
+
+     .artistlist {
+        border: 3px solid rgb(66, 66, 198);
+        margin: 1rem;
+     }
+    
+   
+        
+ }

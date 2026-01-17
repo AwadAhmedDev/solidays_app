@@ -10,3 +10,15 @@ services:
     tty: true
     working_dir: /app
     restart: always
+
+  mysql: 
+    image:  mysql:9.5
+    ports:
+      - 3306:3306
+    volumes:
+      - ./code/mysql:/app
+      - ./mysql-data:/var/lib/mysql
+    working_dir: /app 
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root

@@ -30,6 +30,7 @@
   gap: clamp(1rem, 0.25vw, 2rem);
   padding: 0;
   margin: 0;
+  justify-items: center;
 }
 
 @media (max-width: 64rem) {
@@ -54,8 +55,9 @@
 }
 
 .IntroBilleterie__image {
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  max-width: 300px; 
+  height: auto;
   object-fit: cover;
   display: block;
 }

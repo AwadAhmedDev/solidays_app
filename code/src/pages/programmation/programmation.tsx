@@ -1,9 +1,10 @@
 import React from 'react'
 
 const Programmation = () => {
-  return (
-    <h1>Programmation</h1>
-  )
-}
+
+    return (
+        <div>Programmation</div>
+    )
+};
 
 export default Programmation;

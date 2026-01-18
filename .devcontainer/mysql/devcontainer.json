@@ -1,5 +1,5 @@
 {
-    "name": "Solidays - MySQL",
+    "name": "MySQL Container",
     "service": "mysql",
     "dockerComposeFile": "../../docker-compose.dev.yaml",
     "workspaceFolder": "/app"

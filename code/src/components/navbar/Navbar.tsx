@@ -45,10 +45,10 @@ export default function Navbar() {
                  : styles.navLinks
                 }>
                   <li>
-                    <NavLink to="/evenement"
+                    <NavLink to="/programmation"
                           className={({ isActive }) =>
                       `${isActive ? styles.activeLink : styles.navLinks}`
-                      }>Events</NavLink>
+                      }>Programmation</NavLink>
                   </li>
                       <li><NavLink to="/festival"
                       className={({ isActive }) =>
@@ -84,7 +84,7 @@ export default function Navbar() {
           {isMenuOpen && (
             <div className={styles.mobileMenu}>
               <ul className={styles.navLinks}>
-                <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/evenement" >Events</NavLink></li>
+                <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
                 <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
             <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billeterie" >Billeterie</NavLink></li>
             <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>

@@ -44,21 +44,24 @@ export default function Navbar() {
                   ? [styles.navLinks, styles.active].join(" ")
                  : styles.navLinks
                 }>
+
+                      
+
+                <li><NavLink to="/festival"
+                      className={({ isActive }) =>
+                      `${isActive ? styles.activeLink : styles.navLinks}`
+                      }>Festival</NavLink></li>
                   <li>
                     <NavLink to="/programmation"
                           className={({ isActive }) =>
                       `${isActive ? styles.activeLink : styles.navLinks}`
                       }>Programmation</NavLink>
                   </li>
-                      <li><NavLink to="/festival"
-                      className={({ isActive }) =>
-                      `${isActive ? styles.activeLink : styles.navLinks}`
-                      }>Festival</NavLink></li>
 
-                   <li><NavLink to="/billeterie"
+                   <li><NavLink to="/billetterie"
                     className={({ isActive }) =>
                         `${isActive ? styles.activeLink : styles.navLinks}`
-                      }>Billeterie</NavLink>
+                      }>Billetterie</NavLink>
             </li>
             <li><NavLink to="/mention_legale"         
               className={({ isActive }) =>    
@@ -83,10 +86,10 @@ export default function Navbar() {
           {/* meenu mobile */}
           {isMenuOpen && (
             <div className={styles.mobileMenu}>
-              <ul className={styles.navLinks}>
-                <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
-                <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
-            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billeterie" >Billeterie</NavLink></li>
+          <ul className={styles.navLinks}>
+            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
+            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
+            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billetterie" >Billetterie</NavLink></li>
             <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
               </ul>
             </div>

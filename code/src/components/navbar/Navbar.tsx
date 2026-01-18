@@ -44,7 +44,10 @@ export default function Navbar() {
                   ? [styles.navLinks, styles.active].join(" ")
                  : styles.navLinks
                 }>
-            <li><NavLink to="/festival"
+
+                      
+
+                <li><NavLink to="/festival"
                       className={({ isActive }) =>
                       `${isActive ? styles.activeLink : styles.navLinks}`
                       }>Festival</NavLink></li>

@@ -79,7 +79,8 @@ class ArtistRepository {
 		:image,
 		:description,
 		:youtubeurl,
-		:concertday
+		:concertday,
+		:user_id
 	)
 	  ;
 		`;
@@ -121,7 +122,8 @@ class ArtistRepository {
 		image = :image,
 		description = :description,
 		youtubeurl = :youtubeurl,
-		concertday = :concertday
+		concertday = :concertday,
+		user_id = :user_id
 
 	WHERE
 	${this.table}.id = :id

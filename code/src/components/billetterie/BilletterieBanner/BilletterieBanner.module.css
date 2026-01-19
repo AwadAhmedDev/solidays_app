@@ -1,0 +1,37 @@
+.banner {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.banner__image {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 64rem) {
+    width: 100%;
+  }
+}
+
+.banner__text {
+  max-width: 75%;
+  margin-inline: auto;
+  font-size: clamp(1rem, 1.1vw, 1.5rem);
+  line-height: 1.5;
+  color: white;
+  
+  span {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+   @media (max-width: 64rem) {
+    text-align: justify;
+    max-width: 95%;
+  }
+}

@@ -1,4 +1,5 @@
 import styles from "../intro_billetterie/intro_billetterie.module.css";
+import { NavLink } from 'react-router';
 
 const Intro_Billetterie = () => {
   return (
@@ -47,10 +48,9 @@ const Intro_Billetterie = () => {
 </ul>
 
       <div className={styles.IntroBilleterie__cta}>
-        <a href="#billetterie" className={styles.IntroBilleterie__button}>
+        <NavLink to="/billetterie" className={styles.IntroBilleterie__button}>
           Billetterie
-        </a>
-        { /* T0D0 : Ajouter un NavLink après avoir puller */}
+        </NavLink> 
       </div>
     </section>
   );

@@ -1,0 +1,94 @@
+.intro_programmation {
+  background: radial-gradient(
+    circle at top left,
+    #0b1440,
+    #05092b 70%
+  );
+  padding: 6rem 5vw;
+  color: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.IntroProgrammation__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.IntroProgrammation__visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.IntroProgrammation__image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 2.5rem;
+}
+
+.IntroProgrammation__content {
+  flex: 1.2;
+}
+
+.IntroProgrammation__lead {
+  font-size: 3.9rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  margin-top: 0;
+}
+
+.IntroProgrammation__text {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.IntroProgrammation__closing {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.IntroProgrammation__button {
+  display: inline-block;
+  background-color: #d84fd3;
+  color: #ffffff;
+  padding: 1rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.IntroProgrammation__button:hover,
+.IntroProgrammation__button:focus-visible {
+  background-color: #c546c0;
+  transform: translateY(-0.125rem);
+}
+
+@media (max-width: 40rem) {
+   .IntroProgrammation__container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .IntroProgrammation__visual {
+    order: -1;
+  }
+  .intro_programmation {
+    padding: 4rem 6vw;
+  }
+
+  .IntroProgrammation__button {
+    font-size: 0.75rem;
+    padding: 0.9rem 1.2rem;
+  }
+}

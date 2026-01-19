@@ -1,5 +1,9 @@
 export default function Festival() {
   return (
-    <div>Festival</div>
+    <div>
+      <div>
+        <img src="/img/con" alt="" />
+      </div>
+    </div>
   )
 }

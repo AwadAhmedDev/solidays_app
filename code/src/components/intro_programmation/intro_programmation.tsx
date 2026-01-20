@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import styles from "../intro_programmation/intro_programmation.module.css";
 
 const Intro_Programmation = () => {
@@ -10,7 +11,7 @@ const Intro_Programmation = () => {
 
         <div className={styles.IntroProgrammation__visual}>
           <img
-            src="/src/assets/img/YesWeLove/yeswelove.webp"
+            src="/assets/img/YesWeLove/yeswelove.webp"
             alt="Yes We Love – Message du festival Solidays"
             className={styles.IntroProgrammation__image}
           />
@@ -33,11 +34,10 @@ const Intro_Programmation = () => {
             À Solidays on essaye autre chose.
           </p>
 
-          <a href="#" className={styles.IntroProgrammation__button}
+          <NavLink to="/programmation" className={styles.IntroProgrammation__button}
             aria-label="Voir la programmation Solidays">
             VOIR LA PROGRAMMATION
-          </a>
-          { /* T0D0 : Ajouter un NavLink après avoir puller */}
+          </NavLink>
         </div>
 
       </div>

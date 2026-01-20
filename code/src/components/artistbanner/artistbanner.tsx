@@ -7,7 +7,7 @@ import { NavLink } from "react-router"
 // import lamano from "../../assets/lamano.jpg"
 // import mosimann from "../../assets/mosimann.jpg"
 // import nicomoreno from "../../assets/nicomoreno.jpg"
-import orelsan from "../../../public/assets/img/orelsan.jpg"
+import orelsan from "/assets/img/orelsan.jpg"
 // import rvfleuse from "../../assets/rvfleuse.jpg"
 // import zaralarsson from "../../assets/zaralarsson.jpg"
 
@@ -69,4 +69,3 @@ const ArtistBanner = () => {
 };
 
 export default ArtistBanner;
-

@@ -12,7 +12,7 @@ const ALaUne = () => {
       <div className={styles.aLaUne__grid}>
         <article className={styles.aLaUne__card}>
           <img
-            src="/src/assets/img/a_la_une/11artistes.webp"
+            src="/assets/img/a_la_une/11artistes.webp"
             alt="Annonce des premiers noms à l’affiche"
             className={styles.aLaUne__image}
           />
@@ -26,7 +26,7 @@ const ALaUne = () => {
 
         <article className={styles.aLaUne__card}>
           <img
-            src="/src/assets/img/a_la_une/departBilletterie.jpg"
+            src="/assets/img/a_la_une/departBilletterie.jpg"
             alt="Ouverture de la billetterie"
             className={styles.aLaUne__image}
           />
@@ -40,7 +40,7 @@ const ALaUne = () => {
 
         <article className={styles.aLaUne__card}>
           <img
-            src="/src/assets/img/a_la_une/fondateurSolidariteSida.webp"
+            src="/assets/img/a_la_une/fondateurSolidariteSida.webp"
             alt="Interview autour du festival Solidays"
             className={styles.aLaUne__image}
           />

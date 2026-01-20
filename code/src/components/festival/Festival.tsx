@@ -1,7 +1,7 @@
 import styles from "../festival/Festival.module.css"
 import conimg from "../../assets/concert.jpg"
 import talkimg from "../../assets/talk.jpg"
-import associationimg from "../../assets/concert.jpg"
+import associationimg from "../../assets/asso.png"
 import expoimg from "../../assets/exposition.jpg"
 import { NavLink } from "react-router-dom"
 

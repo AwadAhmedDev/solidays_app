@@ -7,7 +7,7 @@ class ArtistRouter {
 
 	private router = express.Router();
 
-	private multer = multer({ dest: `${process.env.PUBLIC_DIR}/assets/img/programmation` });
+	private multer = multer({ dest: `${process.env.PUBLIC_DIR}/img/programmation` });
 
 
 	public getRoutes = () => {

@@ -1,7 +1,11 @@
-const Artistbanner = () => {
-  return <div>
-    <h2>artist banner</h2>
-  </div>;
-};
+import React from 'react'
 
-export default Artistbanner;
+const artistbanner = () => {
+  return (
+    <div>
+      artist
+    </div>
+  )
+}
+
+export default artistbanner

@@ -1,7 +1,6 @@
 import Navbar from "./components/navbar/Navbar"
 import { Route, Routes } from "react-router"
-import Festival from "./pages/festival/Festival"
-import {Route, Routes} from "react-router"
+// import Festival from "./pages/festival/Festival"
 import Festival from "./pages/weekend/weekend"
 import MentionLegales from "./pages/mention_legale/MentionLegales"
 import Home from "./pages/home/Home"
@@ -24,14 +23,13 @@ function App() {
         <Route path="/billetterie" element={<Billetterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
         <Route path="/artist/:id" element={<Artist />} />
+         <Route path="/admin" element={<AdminHome />} />
       </Routes>
-      <Routes>
+      {/* <Routes>
         <Route path="/admin" element={<AdminHome />} />
-      </Routes>
+      </Routes> */}
 
       <Footer />
-      
-       <Footer />
     </div>
   )
 }

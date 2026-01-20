@@ -13,7 +13,7 @@ export default function Hero() {
           </span> */}
 
                 <div className={styles.heroButtonContainer}>
-                   <NavLink to="/" className={styles.heroButton}>
+                   <NavLink to="/billetterie" className={styles.heroButton}>
                    Get Started
                    </NavLink>
                 </div>

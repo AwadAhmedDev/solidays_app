@@ -1,8 +1,4 @@
 import styles from "../festival/Festival.module.css"
-import conimg from "../../assets/concert.jpg"
-import talkimg from "../../assets/talk.jpg"
-import associationimg from "../../assets/asso.png"
-import expoimg from "../../assets/exposition.jpg"
 import { NavLink } from "react-router-dom"
 
 function Festival() {
@@ -16,7 +12,7 @@ function Festival() {
                     <div className={styles.festivalcon}>
                         <NavLink
                         className={styles.festivalcard}    to={"/"}>
-                            <img src={conimg} alt="concert image" /> 
+                            <img src="../../../assets/img/concert.jpg" alt="concert image" /> 
                             <h3>Concert</h3>
                         </NavLink>
                     </div>
@@ -24,7 +20,7 @@ function Festival() {
                     <div className={styles.festivalcon}>
                         <NavLink to={"/"}
                          className={styles.festivalcard}>
-                            <img src={talkimg} alt="talk image" />
+                            <img src="../../../assets/img/talk.jpg" alt="talk image" />
                             <h3>Talk</h3>
                         </NavLink>
                     </div>
@@ -34,7 +30,7 @@ function Festival() {
                     <div className={styles.festivalcon}>
                         <NavLink  className={styles.festivalcard}
                             to={"/"}>
-                            <img src={associationimg} alt="concert image" />
+                            <img src="../../../assets/img/association.jpg" alt="concert image" />
                             <h3>Association</h3>
                          </NavLink>
                     </div>
@@ -42,7 +38,7 @@ function Festival() {
                     <div className={styles.festivalcon}>
                         <NavLink to={"/"}
                          className={styles.festivalcard}>
-                            <img src={expoimg} alt="talk image" />
+                            <img src="../../../assets/img/talk.jpg" alt="talk image" />
                             <h3>Expositions</h3>
                         </NavLink>
                     </div>

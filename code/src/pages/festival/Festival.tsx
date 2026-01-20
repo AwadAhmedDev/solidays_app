@@ -2,7 +2,7 @@ export default function Festival() {
   return (
     <div>
       
-        <img src="/assets/img/festival" alt="festival" />
+      <h3>festival</h3>
     
     </div>
   )

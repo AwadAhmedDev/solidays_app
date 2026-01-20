@@ -7,7 +7,8 @@ import Footer from "./components/footer/Footer"
 import Billetterie from './pages/billetterie/billetterie'
 import Programmation from './pages/programmation/programmation'
 import AdminHome from "./pages/admin"
-import Artist from "./pages/artists/Artist"
+import ArtistPage from "./pages/artist/artist"
+
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
         <Route path="/festival" element={< Festival />} />
         <Route path="/billetterie" element={<Billetterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
-        <Route path="/artist/:id" element={<Artist />} />
+        <Route path="/artist/:id" element={<ArtistPage />} />
          <Route path="/admin" element={<AdminHome />} />
       </Routes>
       {/* <Routes>

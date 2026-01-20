@@ -6,7 +6,8 @@ import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer"
 import Billetterie from './pages/billetterie/billetterie'
 import Programmation from './pages/programmation/programmation'
-import Artist from "./components/artist/artist"
+import ArtistPage from "./pages/artist/artist"
+
 
 
 
@@ -22,9 +23,10 @@ function App() {
         <Route path="/festival" element={< Festival/>} />
         <Route path="/billetterie" element={<Billetterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
+        <Route path="/artists/:id" element={<ArtistPage />} />
    
       </Routes>
-        <Artist />
+      
        <Footer />
     </div>
   )

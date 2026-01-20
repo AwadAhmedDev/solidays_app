@@ -12,7 +12,7 @@ services:
     restart: always
 
   mysql: 
-    image:  mysql:9.5
+    image: mysql:9.5
     ports:
       - 3306:3306
     volumes:

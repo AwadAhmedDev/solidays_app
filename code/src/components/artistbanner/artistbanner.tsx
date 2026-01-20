@@ -13,19 +13,6 @@ import zaralarsson from "../../assets/zaralarsson.jpg"
 import { useState } from "react"
 
 
-
-const artists = [
-    { name: "BIGFLO & OLI", image: bigflo },
-    { name: "GIMS", image: gims },
-    { name: "INO CASABLANCA", image: inocasablanca},
-    { name: "L2B", image: l2b },
-    { name: "LA MANO 1.9", image: lamano },
-    { name: "LA RVFLEUSE", image: rvfleuse },
-    { name: "MOSIMANN", image: mosimann },
-    { name: "NICO MORENO", image: nicomoreno},
-    { name: "ORELSAN", image: orelsan },
-    { name: "ZARA LARSSON", image: zaralarsson }
-  ];
   
 
 const ArtistBanner = () => {

@@ -1,0 +1,68 @@
+.artistPage {
+    width: 100%;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px;
+  }
+  
+  .artistName {
+    color: white;
+    font-size: 56px;
+    font-weight: 800;
+  }
+  
+  /* CONTENT */
+  .content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
+  }
+  
+  /* LEFT */
+  .left {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cardImage {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* RIGHT */
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .genre {
+    color: #5b5bff;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .concertDay {
+    margin-bottom: 20px;
+  }
+  
+  .link {
+    color: #5b5bff;
+    font-weight: 600;
+    text-decoration: none;
+  }

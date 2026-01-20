@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css'
-import { Link, NavLink } from 'react-router'
+import { NavLink } from 'react-router'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
@@ -14,64 +14,63 @@ export default function Navbar() {
 
   //Affichage;
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-              <div>
-                  <Link to="/">
+    <>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <div>
+            <NavLink to="/">
                       
-                      <img src="../../../assets/img/logo-solidays.png" alt="Logo" className={styles.logoSolidays} />
-                  </Link>
-              </div>
-              <div>
-                   <Link to="/">
-                      <img src="../../../assets/img/bare.jpeg"alt="Logo" className={styles.bare} />
-                   </Link>
-              </div>
-              <div>
-                    <Link to="/">
-                        <img src="../../../assets/img/Logo_Solidaritesida2.png" alt="Logo" className={styles.logoSolidays2} />
-                    </Link>
-              </div>
+              <img src="/assets/img/logo-solidays.png" alt="Logo" className={styles.logoSolidays} />
+            </NavLink>
+          </div>
+          <div>
+            <NavLink to="/">
+              <img src="/assets/img/bare.jpeg" alt="Logo" className={styles.bare} />
+            </NavLink>
+          </div>
+          <div>
+            <NavLink to="/">
+              <img src="/assets/img/Logo_Solidaritesida2.png" alt="Logo" className={styles.logoSolidays2} />
+            </NavLink>
+          </div>
         </div>
 
-      
-      <div className={styles.navContainer}>
-        <nav className={styles.navigation}>
-          <ul
-            className={
-              isMenuOpen
-                ? [styles.navLinks, styles.active].join(" ")
-                : styles.navLinks
-            }>
+        <div className={styles.navContainer}>
+          <nav className={styles.navigation}>
+            <ul
+              className={
+                isMenuOpen
+                  ? [styles.navLinks, styles.active].join(" ")
+                  : styles.navLinks
+              }>
 
-
-
-            <li><NavLink to="/festival"
-              className={({ isActive }) =>
-                `${isActive ? styles.activeLink : styles.navLinks}`
-              }>Festival</NavLink></li>
-            <li>
-              <NavLink to="/programmation"
+              <li><NavLink to="/festival"
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
-                }>Programmation</NavLink>
-            </li>
+                }>Festival</NavLink></li>
+              <li>
+                <NavLink to="/programmation"
+                  className={({ isActive }) =>
+                    `${isActive ? styles.activeLink : styles.navLinks}`
+                  }>Programmation</NavLink>
+              </li>
 
-            <li><NavLink to="/billetterie"
-              className={({ isActive }) =>
-                `${isActive ? styles.activeLink : styles.navLinks}`
-              }>Billetterie</NavLink>
-            </li>
-            <li><NavLink to="/mention_legale"
-              className={({ isActive }) =>
-                `${isActive ? styles.activeLink : styles.navLinks}`
-              }>Mentions Légales</NavLink></li>
-            <li><NavLink to="/mention_legale"
-              className={({ isActive }) =>
-                `${isActive ? styles.activeLink : styles.navLinks}`
-              }>Admin</NavLink></li>
-          </ul>
-        </nav>
+              <li><NavLink to="/billetterie"
+                className={({ isActive }) =>
+                  `${isActive ? styles.activeLink : styles.navLinks}`
+                }>Billetterie</NavLink>
+              </li>
+              <li><NavLink to="/mention_legale"
+                className={({ isActive }) =>
+                  `${isActive ? styles.activeLink : styles.navLinks}`
+                }>Mentions Légales</NavLink></li>
+              <li><NavLink to="/mention_legale"
+                className={({ isActive }) =>
+                  `${isActive ? styles.activeLink : styles.navLinks}`
+                }>Admin</NavLink></li>
+            </ul>
+          </nav >
+        </div>
         <div onClick={toggleMenu} className={styles.hamburgerMenu}>
           {/* <GiHamburgerMenu size={25} className={styles.menuIcon} /> */}
 
@@ -84,20 +83,20 @@ export default function Navbar() {
             )}
 
         </div>
-      </div>
 
-      {/* meenu mobile */}
-      {isMenuOpen && (
-        <div className={styles.mobileMenu}>
-          <ul className={styles.navLinks}>
-            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
-            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
-            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billetterie" >Billetterie</NavLink></li>
-            <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
-          </ul>
-        </div>
-      )}
-    </header>  
-  )
-}
-{/* className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} */}
+        {/* meenu mobile */}
+        {isMenuOpen && (
+          <div className={styles.mobileMenu}>
+            <ul className={styles.navLinks}>
+              <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/festival" >Festival</NavLink></li>
+              <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
+              <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billetterie" >Billetterie</NavLink></li>
+              <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
+            </ul>
+          </div>
+          )}
+      </header>
+    </>
+    // className={({ isActive }) => ${isActive ? styles.activeLink : styles.navLinks}}
+  );
+};

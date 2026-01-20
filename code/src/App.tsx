@@ -20,7 +20,7 @@ function App() {
         <Route path="/billetterie" element={<Billetterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
       </Routes>
-    
+      
        <Footer />
     </div>
   )

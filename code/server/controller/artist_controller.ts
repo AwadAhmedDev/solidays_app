@@ -89,24 +89,22 @@ class ArtistController {
 
 	public update = async (req: Request, res: Response) => {
 		
-		const file = (
-			req.files as Express.Multer.File[]
-		).shift() as Express.Multer.File;
+		// const file = (
+		// 	req.files as Express.Multer.File[]
+		// ).shift() as Express.Multer.File;
 
 		
-		const fileService = new FileService();
+		// const fileService = new FileService();
 
-		let fullname: string;
+		// let fullname: string;
 
-		if (file) {
+		// if (file) {
 		
-			fullname = await fileService.rename(file);
-		} else {
-			fullname = ((await new ArtistRepository().SelectOne(req.body)) as Artist)
-				.image;
-		}
-
-		console.log(fullname);
+		// 	fullname = await fileService.rename(file);
+		// } else {
+		// 	fullname = ((await new ArtistRepository().SelectOne(req.body)) as Artist)
+		// 		.image;
+		// }
 
 		
 		const results = await new ArtistRepository().update(req.body);

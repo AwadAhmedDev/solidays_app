@@ -40,11 +40,6 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.aLaUne__card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 50px rgb(201, 255, 92);
-}
-
 .aLaUne__image {
   width: 100%;
   aspect-ratio: 1 / 1;

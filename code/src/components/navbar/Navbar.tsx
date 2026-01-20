@@ -1,7 +1,4 @@
 import styles from './Navbar.module.css'
-import logoSolidays from '../../assets/logo-solidays.png'
-import bare from '../../assets/bare.jpeg'
-import logoSolidays2 from '../../assets/Logo_Solidaritesida2.png'
 import { NavLink } from 'react-router'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
@@ -29,6 +26,24 @@ export default function Navbar() {
           <NavLink to="/">
             <img src={bare} alt="Logo" className={styles.bare} />
           </NavLink>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+              <div>
+                  <NavLink to="/">
+                      
+                      <img src="../../../assets/img/logo-solidays.png" alt="Logo" className={styles.logoSolidays} />
+                  </NavLink>
+              </div>
+              <div>
+                   <NavLink to="/">
+                      <img src="../../../assets/img/bare.jpeg"alt="Logo" className={styles.bare} />
+                   </NavLink>
+              </div>
+              <div>
+                    <NavLink to="/">
+                        <img src="../../../assets/img/Logo_Solidaritesida2.png" alt="Logo" className={styles.logoSolidays2} />
+                    </NavLink>
+              </div>
         </div>
         <div>
           <NavLink to="/">

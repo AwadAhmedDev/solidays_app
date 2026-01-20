@@ -69,3 +69,14 @@ const ArtistBanner = () => {
 };
 
 export default ArtistBanner;
+import React from 'react'
+
+const artistbanner = () => {
+  return (
+    <div>
+      artist
+    </div>
+  )
+}
+
+export default artistbanner

@@ -1,5 +1,5 @@
 import ALaUne from "../../components/a_la_une/a_la_une";
-import ArtistBanner from "../../components/artistbanner/artistbanner";
+import ArtistBanner from "../../components/artist/artist";
 import Festival from "../../components/festival/Festival";
 import Hero from "../../components/hero/Hero";
 import Intro_Billetterie from "../../components/intro_billetterie/intro_billetterie";

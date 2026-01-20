@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 
@@ -16,42 +16,25 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <div>
-          <NavLink to="/">
-
-            <img src={logoSolidays} alt="Logo" className={styles.logoSolidays} />
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/">
-            <img src={bare} alt="Logo" className={styles.bare} />
-          </NavLink>
-      <header className={styles.header}>
-        <div className={styles.logo}>
               <div>
-                  <NavLink to="/">
+                  <Link to="/">
                       
                       <img src="../../../assets/img/logo-solidays.png" alt="Logo" className={styles.logoSolidays} />
-                  </NavLink>
+                  </Link>
               </div>
               <div>
-                   <NavLink to="/">
+                   <Link to="/">
                       <img src="../../../assets/img/bare.jpeg"alt="Logo" className={styles.bare} />
-                   </NavLink>
+                   </Link>
               </div>
               <div>
-                    <NavLink to="/">
+                    <Link to="/">
                         <img src="../../../assets/img/Logo_Solidaritesida2.png" alt="Logo" className={styles.logoSolidays2} />
-                    </NavLink>
+                    </Link>
               </div>
-        </div>
-        <div>
-          <NavLink to="/">
-            <img src={logoSolidays2} alt="Logo" className={styles.logoSolidays2} />
-          </NavLink>
         </div>
 
-      </div>
+      
       <div className={styles.navContainer}>
         <nav className={styles.navigation}>
           <ul
@@ -114,8 +97,7 @@ export default function Navbar() {
           </ul>
         </div>
       )}
-    </header>
+    </header>  
   )
 }
-
-// className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`}
+{/* className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} */}

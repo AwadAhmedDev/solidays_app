@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -6,21 +6,21 @@ export default function Footer() {
     <footer
       className={styles.footer}>
       <div className={styles.footerGradient}>
-        <div className={styles.footerTop}>
+        <div className={styles.footerTop}> 
           <nav className={styles.footerNav}>
-            <NavLink to="#">Faire un don</NavLink>
-            <NavLink to="#">Médias</NavLink>
-            <NavLink to="#">Archives</NavLink>
-            <NavLink to="#">Contact</NavLink>
-            <NavLink to="../../pages/mention_legale">Mentions légales</NavLink>
-            <NavLink to="#">Données personnelles & cookies</NavLink>
+            <Link to="#">Faire un don</Link>
+            <Link to="#">Médias</Link>
+            <Link to="#">Archives</Link>
+            <Link to="#">Contact</Link>
+            <Link to="../../pages/mention_legale">Mentions légales</Link>
+            <Link to="#">Données personnelles & cookies</Link>
           </nav>
 
           <div className={styles.footerSocials}>
-            <NavLink to="#" aria-label="Instagram">IG</NavLink>
-            <NavLink to="#" aria-label="TikTok">TT</NavLink>
-            <NavLink to="#" aria-label="YouTube">YT</NavLink>
-            <NavLink to="#" aria-label="Facebook">FB</NavLink>
+            <Link to="#" aria-label="Instagram">IG</Link>
+            <Link to="#" aria-label="TikTok">TT</Link>
+            <Link to="#" aria-label="YouTube">YT</Link>
+            <Link to="#" aria-label="Facebook">FB</Link>
           </div>
         </div>
 

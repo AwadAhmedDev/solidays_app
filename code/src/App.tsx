@@ -1,6 +1,6 @@
 import Navbar from "./components/navbar/Navbar"
 import {Route, Routes} from "react-router"
-import Festival from "./pages/festival/Festival"
+import Festival from "./pages/weekend/weekend"
 import MentionLegales from "./pages/mention_legale/MentionLegales"
 import Home from "./pages/home/Home"
 import Footer from "./components/footer/Footer"

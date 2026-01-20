@@ -70,6 +70,6 @@ export default function Navbar() {
           </ul>
         </div>
       )}
-    </header>
+    </header>  
   )
 }

@@ -7,4 +7,4 @@ type Artist = {
     concertday: string;
 };
 
-export type { Artist };
+export type { Artist }; 

@@ -6,7 +6,7 @@ const BilletterieBanner = () => {
       className={styles.banner} aria-label="Page de la Billetterie du festival"
     >
       <img
-        src="/src/assets/img/billetterie/banner.jpg"
+        src="/assets/img/billetterie/banner.jpg"
         alt="Foule du festival Solidays pendant un concert"
         className={styles.banner__image}
       />

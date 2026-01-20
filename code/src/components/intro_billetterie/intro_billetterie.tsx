@@ -16,7 +16,7 @@ const Intro_Billetterie = () => {
       <ul className={styles.IntroBilleterie__list}>
   <li className={styles.IntroBilleterie__item}>
       <img
-        src="/src/assets/img/intro_billetterie/pass3jours.webp"
+        src="/assets/img/intro_billetterie/pass3jours.webp"
         alt="Pass 3 jours"
         className={styles.IntroBilleterie__image}
       />
@@ -24,7 +24,7 @@ const Intro_Billetterie = () => {
 
   <li className={styles.IntroBilleterie__item}>
       <img
-        src="/src/assets/img/intro_billetterie/passVendredi.webp"
+        src="/assets/img/intro_billetterie/passVendredi.webp"
         alt="Pass Vendredi"
         className={styles.IntroBilleterie__image}
       />
@@ -32,7 +32,7 @@ const Intro_Billetterie = () => {
 
   <li className={styles.IntroBilleterie__item}>
       <img
-        src="/src/assets/img/intro_billetterie/passSamedi.webp"
+        src="/assets/img/intro_billetterie/passSamedi.webp"
         alt="Pass Samedi"
         className={styles.IntroBilleterie__image}
       />
@@ -40,7 +40,7 @@ const Intro_Billetterie = () => {
 
   <li className={styles.IntroBilleterie__item}>
       <img
-        src="/src/assets/img/intro_billetterie/passDimanche.webp"
+        src="/assets/img/intro_billetterie/passDimanche.webp"
         alt="Pass Dimanche"
         className={styles.IntroBilleterie__image}
       />

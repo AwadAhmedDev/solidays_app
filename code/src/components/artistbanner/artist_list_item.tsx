@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import type { ArtistListItemProps } from "../../models/props/ArtistListItemProps";
 
 
+
 const ArtistListItem = ({ artist }: ArtistListItemProps) => {
   return (
     <li>

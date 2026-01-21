@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   min-height: 520px;
-  background-image: url('../../../public/assets/img/footerSolidays.png');
+  background-image: url('/assets/img/footerSolidays.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

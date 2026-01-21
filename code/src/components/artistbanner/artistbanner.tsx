@@ -74,7 +74,7 @@ const ArtistBanner = () => {
     const [artists, setArtists] = useState<Artist[]>([])
 
     // default background = orelsan
-    const [bg, setBg] = useState<string>("assets/img/orelsan.jpg");
+    const [bg, setBg] = useState<string>("orelsan.png");
 
     useEffect(() => {
         new ApiArtistService().selectAll().then((response) => {
@@ -87,8 +87,9 @@ const ArtistBanner = () => {
 
     return (
         <div className={styles.artistbanner}
-            style={{ backgroundImage: `url(assets/img/${bg})` }}
+        
         >
+                <img src={`/assets/img/programmation/${bg}`} alt="" />
 
             <ul className={styles.artistlist}>
                 {artists?.map((artist) => (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Artist } from "../../../models/artist";
-import styles from "./artist.module.css"
+import styles from "../artist/artist.module.css"
 ;
 
 const ArtistPage = () => {
@@ -26,23 +26,18 @@ const ArtistPage = () => {
     <div className={styles.artistPage}>
     {/* HERO */}
     <div
-      className={styles.hero}
-      style={{
-        backgroundImage: `url(${artist.image})`,
-      }}
-    >
-      <h1 className={styles.artistName}>{artist.name}</h1>
+        className={styles.hero} >
+        
+        <img className={styles.Img} src={`/assets/img/programmation/${artist.image}`} alt="" />
+      <h2 className={styles.artistName}>{artist.name}</h2>
     </div>
 
     {/* CONTENT */}
     <div className={styles.content}>
       {/* LEFT */}
       <div className={styles.left}>
-        <img
-          src={`url(${artist.image})`}
-          alt={artist.name}
-          className={styles.cardImage}
-        />
+       
+    
       </div>
 
       {/* RIGHT */}
@@ -60,6 +55,7 @@ const ArtistPage = () => {
           target="_blank"
           rel="noreferrer"
           className={styles.link}
+          
         >
           Watch on YouTube
         </a>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Artist } from "../../../models/artist";
-import styles from "../artist/artist.module.css"
+import styles from "./artist.module.css"
 ;
 
 const ArtistPage = () => {

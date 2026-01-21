@@ -49,8 +49,8 @@ import { NavLink } from "react-router"
 import ApiArtistService from "../../services/api_artist_service";
 import { useEffect, useState } from "react";
 import type { Artist } from "../../../models/artist";
-import ArtistListItem from "../artistListItem/ArtistListItem";
-// import ArtistListItem from "../artistListItem/ArtistListItem"
+// import ArtistListItem from "../artistListItem/ArtistListItem";
+import ArtistListItem from "../artistListItem/ArtistListItem"
 
 
 
@@ -73,26 +73,28 @@ const ArtistBanner = () => {
 
     const [artists, setArtists] = useState<Artist[]>([])
 
+    // default background = orelsan
+    const [bg, setBg] = useState<string>("assets/img/orelsan.jpg");
+
     useEffect(() => {
         new ApiArtistService().selectAll().then((response) => {
             setArtists(response.data as Artist[]);
             console.log(response.data);
         });
-    }, [])
+    }, []);
 
-    // default background = orelsan
-    // const [bg, setBg] = useState(orelsan);
+ 
 
     return (
         <div className={styles.artistbanner}
-            // style={{ backgroundImage: `url(/img/${bg})` }}
+            style={{ backgroundImage: `url(assets/img/${bg})` }}
         >
 
             <ul className={styles.artistlist}>
                 {artists?.map((artist) => (
                     <li>
                         <ArtistListItem artist={artist}
-                            // setBg={setBg}
+                            setBg={setBg}
                             key={artist.name} />
                     </li>
                 ))}

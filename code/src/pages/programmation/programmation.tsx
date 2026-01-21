@@ -1,10 +1,13 @@
-import React from 'react'
+import React from "react";
+import ProgrammationTabs from "../../components/programmationContent/ProgrammationTabs";
 
-const Programmation = () => {
 
-    return (
-        <div>Programmation</div>
-    )
+const ProgrammationPage = () => {
+  return (
+    <section>
+      <ProgrammationTabs />
+    </section>
+  );
 };
 
-export default Programmation;
+export default ProgrammationPage;

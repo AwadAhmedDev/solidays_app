@@ -28,7 +28,7 @@ const ArtistPage = () => {
     <div
       className={styles.hero}
       style={{
-        backgroundImage: `url(/assets/img/${artist.image})`,
+        backgroundImage: `url(${artist.image})`,
       }}
     >
       <h1 className={styles.artistName}>{artist.name}</h1>
@@ -39,7 +39,7 @@ const ArtistPage = () => {
       {/* LEFT */}
       <div className={styles.left}>
         <img
-          src={`/assets/img/${artist.image}`}
+          src={`url(${artist.image})`}
           alt={artist.name}
           className={styles.cardImage}
         />
@@ -68,6 +68,7 @@ const ArtistPage = () => {
   </div>
   );
 };
+console.log("artist.image:");
 
 export default ArtistPage;
 

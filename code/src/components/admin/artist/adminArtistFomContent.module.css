@@ -1,0 +1,76 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.container label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.container input[type="text"],
+.container input[type="file"],
+.container textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.container input[type="text"]:focus,
+.container textarea:focus {
+  outline: none;
+  border-color: #2196f3;
+}
+
+.container textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.container small {
+  color: #f44336;
+  margin-top: 0.3rem;
+}
+
+.container button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: center;
+}
+
+.container button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+}

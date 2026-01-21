@@ -1,6 +1,7 @@
 import type { QueryResult } from "mysql2";
 import MySQLService from "../service/mysql_service";
 import { Artist } from "../../models/artist";
+import FileService from "../service/file_service";
 
 class ArtistRepository {
 	
@@ -105,50 +106,67 @@ class ArtistRepository {
 	};
 
 
-	public update = async (
-		data: Partial<Artist>,
-	): Promise<QueryResult | unknown> => {
-		
-		const connection = await new MySQLService().connect();
+public update = async (
+    data: Partial<Artist>,
+    file?: Express.Multer.File // fichier image envoyé depuis le front
+): Promise<QueryResult | unknown> => {
 
-		
-		const sql = `
+    if (!data || !data.id) {
+        return new Error("ID de l'artiste manquant pour le update.");
+    }
 
-	UPDATE 
-		${process.env.MYSQL_DATABASE}.${this.table}
-	SET
+    const connection = await new MySQLService().connect();
+    const safeData: any = { id: data.id }; // id obligatoire
+    const fields: string[] = [];
 
-		name = :name,
-		image = :image,
-		description = :description,
-		youtubeurl = :youtubeurl,
-		concertday = :concertday,
-		user_id = :user_id
+    // Champs texte à mettre à jour si fournis
+    if (data.name !== undefined) {
+        fields.push("name = :name");
+        safeData.name = data.name;
+    }
+    if (data.description !== undefined) {
+        fields.push("description = :description");
+        safeData.description = data.description;
+    }
+    if (data.youtubeurl !== undefined) {
+        fields.push("youtubeurl = :youtubeurl");
+        safeData.youtubeurl = data.youtubeurl;
+    }
+    if (data.concertday !== undefined) {
+        fields.push("concertday = :concertday");
+        safeData.concertday = data.concertday;
+    }
 
-	WHERE
-	${this.table}.id = :id
-	  ;
-		`;
+    // Champ image à mettre à jour si un fichier est envoyé
+    if (file) {
+        const fileService = new FileService();
+        const imagePath = await fileService.rename(file); // retourne /uploads/nomfichier.ext
 
-		try {
-			
-			connection.beginTransaction();
+        fields.push("image = :image");
+        safeData.image = imagePath;
+    }
 
-			
-			const [query] = await connection.execute(sql, data);
+    // Si aucun champ à mettre à jour, on ne fait rien
+    if (fields.length === 0) {
+        return new Error("Aucun champ fourni pour la modification.");
+    }
 
-			
-			connection.commit();
+    const sql = `
+        UPDATE ${process.env.MYSQL_DATABASE}.${this.table}
+        SET ${fields.join(", ")}
+        WHERE id = :id;
+    `;
 
-			return query;
-			
-		} catch (error) {
-			
-			connection.rollback();
-
-			return error;
-		}
-	};
+    try {
+        await connection.beginTransaction();
+        const [query] = await connection.execute(sql, safeData);
+        await connection.commit();
+        return query;
+    } catch (error) {
+        await connection.rollback();
+        return error;
+    }
+};
 
 	public delete = async (
 		data: Partial<Artist>,

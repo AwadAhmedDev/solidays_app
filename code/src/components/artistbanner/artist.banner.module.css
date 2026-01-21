@@ -1,0 +1,11 @@
+.artistbanner {
+   background-image: url(assets/img/orelsan.jpg);
+   background-position: right center;
+   object-fit: cover;
+   background-repeat: no-repeat;
+   display: flex;
+   background-color: black;
+   position: relative;
+   width: 100%;
+}
+

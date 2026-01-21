@@ -64,7 +64,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
                 }>Mentions Légales</NavLink></li>
-              <li><NavLink to="/mention_legale"
+              <li><NavLink to="/admin"
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
                 }>Admin</NavLink></li>
@@ -92,6 +92,10 @@ export default function Navbar() {
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billetterie" >Billetterie</NavLink></li>
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
+                <li><NavLink to="/admin"
+                className={({ isActive }) =>
+                  `${isActive ? styles.activeLink : styles.navLinks}`
+                }>Admin</NavLink></li>
             </ul>
           </div>
           )}

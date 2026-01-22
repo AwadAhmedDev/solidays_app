@@ -64,11 +64,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
                 }>Mentions Légales</NavLink></li>
-<<<<<<< HEAD
-              <li><NavLink to="/mention_legale"
-=======
               <li><NavLink to="/admin"
->>>>>>> refs/remotes/origin/master
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
                 }>Admin</NavLink></li>
@@ -96,13 +92,10 @@ export default function Navbar() {
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/programmation" >Programmation</NavLink></li>
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/billetterie" >Billetterie</NavLink></li>
               <li><NavLink className={({ isActive }) => `${isActive ? styles.activeLink : styles.navLinks}`} to="/mention_legale" >Mentions Légales</NavLink></li>
-<<<<<<< HEAD
-=======
                 <li><NavLink to="/admin"
                 className={({ isActive }) =>
                   `${isActive ? styles.activeLink : styles.navLinks}`
                 }>Admin</NavLink></li>
->>>>>>> refs/remotes/origin/master
             </ul>
           </div>
           )}
@@ -110,8 +103,5 @@ export default function Navbar() {
     </>
     // className={({ isActive }) => ${isActive ? styles.activeLink : styles.navLinks}}
   );
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> refs/remotes/origin/master
+

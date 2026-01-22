@@ -42,11 +42,7 @@ import { NavLink } from "react-router"
 // import lamano from "../../assets/lamano.jpg"
 // import mosimann from "../../assets/mosimann.jpg"
 // import nicomoreno from "../../assets/nicomoreno.jpg"
-<<<<<<< HEAD
-import orelsan from "/assets/img/orelsan.jpg"
-=======
 // import orelsan from "/assets/img/orelsan.jpg"
->>>>>>> refs/remotes/origin/master
 // import rvfleuse from "../../assets/rvfleuse.jpg"
 // import zaralarsson from "../../assets/zaralarsson.jpg"
 

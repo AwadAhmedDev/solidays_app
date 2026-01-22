@@ -1,6 +1,7 @@
 import { NavLink } from "react-router"
 import styles from "./ArtistListItem.module.css"
-import type { ArtistListItemProps } from "../../models/props/ArtistListItemProps"
+import type { ArtistListItemProps } from "../../models/props/artist_list_item_props"
+
 
 
 const ArtistListItem = ({ artist, setBg }: ArtistListItemProps) => {

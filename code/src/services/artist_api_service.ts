@@ -1,12 +1,14 @@
-import type { ApiResponse } from "../../models/api_response";
+
 import type { Artist } from "../../models/artist";
+import type { ApiResponse } from "../models/api_response";
 
-class ApiArtistService {
+class ArtistApiService {
 
-    // récupérer tous les artistes
+    private prefix = "/api/artist";
+    
     public selectAll = async (): Promise<ApiResponse<Artist[]>> => {
-        const request = new
-            Request(`${import.meta.env.VITE_API_URL}/api/artist`);
+        const request = new Request(
+            `${import.meta.env.VITE_API_URL}${this.prefix}`);
         const response = await fetch(request);
         const results = await response.json();
         return results;
@@ -14,16 +16,17 @@ class ApiArtistService {
 
     // récupérer un artiste
     public selectOne = async (id: number): Promise<ApiResponse<Artist>> => {
-        const request = new
-            Request(`${import.meta.env.VITE_API_URL}/api/artist/${id}`);
+        const request = new Request(
+            `${import.meta.env.VITE_API_URL}${this.prefix}/${id}`);
         const response = await fetch(request);
         const results = await response.json();
         return results;
     };
 
-    public insert = async (data: FormData): Promise<ApiResponse<null>> => {
-        const request = new
-            Request(`${import.meta.env.VITE_API_URL}/api/artist`, {
+    public insert = async (data: FormData): Promise<ApiResponse<Artist>> => {
+        const request = new Request(
+            `${import.meta.env.VITE_API_URL}${this.prefix}`,
+            {
                 method: 'post',
                 body: data
             });
@@ -33,9 +36,8 @@ class ApiArtistService {
     };
     
     public update = async (data: FormData): Promise<ApiResponse<Artist>> => {
-		// configurer la requête HTTP
 		const request = new Request(
-			`${import.meta.env.VITE_API_URL}/api/artist`,
+			`${import.meta.env.VITE_API_URL}${this.prefix}`,
 			{
 				method: "put",
 				body: data,
@@ -47,13 +49,10 @@ class ApiArtistService {
 		return results;
 	};
 
-
-    public delete = async (
-		data: Partial<Artist>,
-	): Promise<ApiResponse<Artist>> => {
+    public delete = async (data: Partial<Artist>): Promise<ApiResponse<Artist>> => {
 		
 		const request = new Request(
-			`${import.meta.env.VITE_API_URL}/api/artist`,
+			`${import.meta.env.VITE_API_URL}${this.prefix}`,
 			{
 				method: "delete",
 				headers: {
@@ -69,4 +68,4 @@ class ApiArtistService {
 		return results;
 	};
 }
-export default ApiArtistService;
+export default ArtistApiService;

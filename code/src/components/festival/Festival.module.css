@@ -1,59 +1,88 @@
 .festival {
-    background:linear-gradient(#030d31,#362686, #3d4eaf);
+    width: 100%;
+    background: linear-gradient(#030d31, #362686, #3d4eaf);
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
-    align-items: center;
     padding: 2rem;
-    
-}
-h2,p{
-    color: #7b90ff;
-}
-.con {
-   width: 100%;
-   display: flex;
-   gap: 4rem;
-   flex-wrap: wrap;
-   text-align: center;
-   align-items: center;
-   justify-content: center;
-   padding: 3rem;
-}
-.festivalcon {
-    width: 500px;
-    position: relative;
-}
-.festivalcard img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4 ease-in;
+    box-sizing: border-box;
   }
   
-.festivalcard {
+  h2, p {
+    color: #7b90ff;
+  }
+  
+  /* container of cards */
+  .con {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* each card wrapper */
+  .festivalcon {
+    width: 100%;
+    max-width: 370px; /* desktop card size */
+    box-sizing: border-box;
+  }
+  
+  /* card */
+  .festivalcard {
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: all 0.8s ease;
-
-}
-.festivalcard h3 {
+    width: 100%;
+    border-radius: 12px; /* optional */
+  }
+  
+  /* IMPORTANT: remove the max-width limitation */
+  .festivalcard img {
+    width: 100%;
+    max-width: none;     /* ✅ this fixes your screenshot issue */
+    height: 200px;       /* set a nice consistent height */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease-in;
+  }
+  
+  .festivalcard h3 {
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 60px;
+    left: 3px;
     color: white;
-}
-
-
-.festival h2:hover {
+  }
+  
+  .festival h2:hover {
     color: white;
-}
-
-.festivalcard img:hover {
-    transform: scale(1.3);
-}
+  }
+  
+  .festivalcard:hover img {
+    transform: scale(1.08);
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .festival {
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+  
+    .con {
+      padding: 1rem;
+      gap: 2rem;
+    }
+  
+    .festivalcon {
+      max-width: 100%;   /* ✅ full width card on mobile */
+    }
+  
+    .festivalcard img {
+      height: 300px; 
+      width: 100%;    /* a bit smaller for phones */
+    }
+  }
+  

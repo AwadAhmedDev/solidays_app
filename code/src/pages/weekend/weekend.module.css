@@ -1,34 +1,50 @@
 .weekend {
-    width: 1200px;
-}
-.weekend img {
     width: 100%;
-}
-.title {
-    border-bottom: 1px solid grey;
-    margin: auto;
-    text-transform: uppercase;
-    display: flex;
-    padding: 1rem;
-}
-.box {
-    width: 1000px;
-    margin: auto;
-}
-.content {
-  padding: 2rem;
-  color: black;
-}
-.planbox {
-    width: 900px;
-    margin: auto;
-    justify-content: center;
-    display: flex;
-}
+  }
 
-.planning {
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    margin-bottom:3rem;
-}
+  img {
+    width: 100%;
+  }
+  
+  /* IMAGE FULL WIDTH */
+  .hero {
+    width: 100vw;
+    height: 400px;          /* desktop */
+    overflow: hidden;
+  
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .heroImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* CONTENU */
+  .box {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  
+  .content {
+    line-height: 1.6;
+  }
+  
+  /* IMAGE PLANNING */
+  .planning {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* RESPONSIVE MOBILE */
+  @media (max-width: 768px) {
+    .hero {
+      height: 220px;
+    }
+  }
+  

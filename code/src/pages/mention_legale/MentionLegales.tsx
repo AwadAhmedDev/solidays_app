@@ -6,7 +6,7 @@ export default function MentionLegales() {
       <div className={styles.mentionLegalesPage}>
           <div className={styles.mentionLegales}>
           <div className={styles.mentionLegaleImages}>
-              <img src="../../../assets/mentiion_legales_img" alt="mention Legale Image" />
+              <img src="/assets/img/mention_legales_img.jpg" alt="mention Legale Image" />
           </div>
       <h1>Mentions Légales</h1>
       <h2>Éditeur</h2>
@@ -114,7 +114,7 @@ export default function MentionLegales() {
 
               <div className={styles.imageGrid}>
                   <figure className={styles.imageContainer}>
-                      <img src="../../../assets/img/mention_2.jpg" alt="Image de présentation" className={styles.image} />
+                      <img src="/assets/img/mention_2.png" alt="Image de présentation" className={styles.image} />
                       <button className={styles.bottomLeftButton}>En savoir plus</button>
                       <figcaption className={styles.overlayCaption}>
                           <h3>Solidarité Sida</h3>
@@ -123,7 +123,7 @@ export default function MentionLegales() {
                   </figure>
                   <div className={styles.imageContainer}>
                      <figure className={styles.imageContainer}>
-                      <img src="../../../assets/img/mention_2.jpg"  alt="Image de présentation" className={styles.image2} />
+                      <img src="/assets/img/mention_legales_img.jpg"  alt="Image de présentation" className={styles.image2} />
                       <button className={styles.bottomLeftButton}>En savoir plus</button>
                       <figcaption className={styles.overlayCaption}>
                           <h3>Solidarité Sida</h3>

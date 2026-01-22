@@ -38,7 +38,8 @@ function Festival() {
                     <div className={styles.festivalcon}>
                         <NavLink to={"/"}
                          className={styles.festivalcard}>
-                            <img src="../../../assets/img/talk.jpg" alt="talk image" />
+                            <img src="../../../assets/img/exposition.jpg
+                            " alt="talk image" />
                             <h3>Expositions</h3>
                         </NavLink>
                     </div>

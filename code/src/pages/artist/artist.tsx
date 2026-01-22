@@ -28,11 +28,8 @@ const ArtistPage = () => {
     <div
         className={styles.hero} >
         
-<<<<<<< HEAD
         <img className={styles.Img} src={`/assets/img/programmation/${artist.image}`} alt="" />
-=======
         <img className={styles.Img} src={`/img/programmation/${artist.image}`} alt="" />
->>>>>>> refs/remotes/origin/master
       <h2 className={styles.artistName}>{artist.name}</h2>
     </div>
 
@@ -68,10 +65,7 @@ const ArtistPage = () => {
   </div>
   );
 };
-<<<<<<< HEAD
-console.log("artist.image:");
-=======
->>>>>>> refs/remotes/origin/master
+// console.log("artist.image:");
 
 export default ArtistPage;
 

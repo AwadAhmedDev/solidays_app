@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ApiArtistService from "../../services/artist_api_service";

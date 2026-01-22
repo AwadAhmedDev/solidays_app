@@ -104,4 +104,3 @@ export default function Navbar() {
     // className={({ isActive }) => ${isActive ? styles.activeLink : styles.navLinks}}
   );
 };
-

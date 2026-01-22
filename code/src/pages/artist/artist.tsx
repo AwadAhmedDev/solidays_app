@@ -28,7 +28,6 @@ const ArtistPage = () => {
     <div
         className={styles.hero} >
         
-        <img className={styles.Img} src={`/assets/img/programmation/${artist.image}`} alt="" />
         <img className={styles.Img} src={`/img/programmation/${artist.image}`} alt="" />
       <h2 className={styles.artistName}>{artist.name}</h2>
     </div>
@@ -65,7 +64,6 @@ const ArtistPage = () => {
   </div>
   );
 };
-// console.log("artist.image:");
 
 export default ArtistPage;
 

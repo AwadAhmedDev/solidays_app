@@ -1,18 +1,22 @@
-import { NavLink } from "react-router"
-import styles from "./ArtistListItem.module.css"
-import type { ArtistListItemProps } from "../../models/props/artist_list_item_props"
-
-
+import { NavLink } from "react-router";
+import styles from "./ArtistListItem.module.css";
+import type { ArtistListItemProps } from "../../models/props/artist_list_item_props";
 
 const ArtistListItem = ({ artist, setBg }: ArtistListItemProps) => {
-    return (
-        <NavLink className={styles.link}
-            to={`/artist/${artist.id}`}
-            onMouseEnter={() => setBg(artist.image)}
-            onMouseLeave={() => setBg(artist.name === "ORELSAN" ? artist.image : artist.image)}
-            onTouchStart={() => setBg(artist.image)} // mobile
-        > {artist.name} </NavLink>
-    )
-}
+  return (
+    <NavLink
+      className={styles.link}
+      to={`/artist/${artist.id}`}
+      onMouseEnter={() => setBg(artist.image)}
+      onMouseLeave={() =>
+        setBg(artist.name === "ORELSAN" ? artist.image : artist.image)
+      }
+      onTouchStart={() => setBg(artist.image)} // mobile
+    >
+      {" "}
+      {artist.name}{" "}
+    </NavLink>
+  );
+};
 
-export default ArtistListItem
+export default ArtistListItem;

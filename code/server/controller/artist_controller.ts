@@ -87,52 +87,41 @@ class ArtistController {
 		});
 	};
 
-    public update = async (req: Request, res: Response) => {
-        try {
-            // 1️⃣ récupérer le fichier envoyé (si présent)
-            const file = (req.files as Express.Multer.File[] | undefined)?.[0];
+	public update = async (req: Request, res: Response) => {
+	
+		const file = (
+			req.files as Express.Multer.File[]
+		).shift() as Express.Multer.File;
 
-            const fileService = new FileService();
-            let imagePath: string;
+		const fileService = new FileService();
 
-            if (file) {
-                // renommer et déplacer le fichier → retourne /uploads/nomfichier.ext
-                imagePath = await fileService.rename(file);
-            } else {
-                // pas de fichier → récupérer l'image actuelle
-                const existingArtist = (await new ArtistRepository().SelectOne(req.body)) as Artist;
-                imagePath = existingArtist.image;
-            }
+		let fullname: string;
 
-            // 2️⃣ mettre à jour req.body avec le chemin correct
-            req.body.image = imagePath;
+		if (file) {
+			fullname = await fileService.rename(file);
+		} else {
+			fullname = ((await new ArtistRepository().SelectOne(req.body)) as Artist)
+				.image;
+		}
+		
+		const results = await new ArtistRepository().update({...req.body, image : fullname});
 
-            // 3️⃣ update dans la base
-            const results = await new ArtistRepository().update(req.body);
+		if (results instanceof Error) {
+			res.status(400).json({
+				status: 400,
+				message:
+					process.env.NODE_ENV === "production" ? "Error" : results.message,
+			});
 
-            // 4️⃣ gérer les erreurs
-            if (results instanceof Error) {
-                return res.status(400).json({
-                    status: 400,
-                    message: process.env.NODE_ENV === "production" ? "Error" : results.message,
-                });
-            }
+			return;
+		}
 
-            // 5️⃣ renvoyer la réponse
-            return res.status(200).json({
-                status: 200,
-                message: "Artiste mis à jour avec succès",
-                data: results,
-            });
-        } catch (error) {
-            console.error("Erreur update artist:", error);
-            return res.status(500).json({
-                status: 500,
-                message: "Erreur serveur lors de la modification",
-                error,
-            });
-        }
-    };
+		res.status(200).json({
+			status: 200,
+			message: "Updated",
+			data: results,
+		});
+	};
 
 	public delete = async (req: Request, res: Response) => {
 		

@@ -8,8 +8,8 @@ VALUES
     ('admin@admin.fr', '$argon2i$v=19$m=16,t=2,p=1$SHhIaUptM256UXBtZjF3VA$0cfqFjyvBxio+CPnUL6wAg', 1)
 ;
 
-
-INSERT INTO solidays_dev.artist (id, name, image, description, youtubeurl, concertday ) VALUES
+INSERT INTO solidays_dev.artist (id, name, image, description, youtubeurl, concertday)
+VALUES
 (1, 'BigFlo & Oli', 'bigfloOli.png', 'À Solidays, Bigflo et Oli sont comme à la maison. Pourtant, on ne sait jamais à quoi s’attendre à leur passage : freestyles légendaires, bains de foule électrisants, collabs folles… Des shows à l’image de leur carrière : en pleine évolution (pokémon). 2026 va le confirmer, avec l’arrivée d’un nouvel album plus qu’attendu. Ce serait dommage de les louper.', 'https://youtu.be/krJ7k1gG_28', 'Samedi'),
 (2, 'Gims', 'gims.png', 'Maintenant qu’on a goûté au charisme XXL du rappeur francophone le plus écouté au monde (seul le ciel-euh peut s’y mesurer), on ne peut plus s’en passer! Voix de ténor, maximum beats, bonbons de sons, et pluie de tubes, on sait déjà qu’il va tout plier. Il fallait bien ça pour lancer le festival.', 'https://youtu.be/KG6ft_YDp5k', 'Vendredi'),
 (3, 'Ino Casablanca', 'inoCasablanca.png','Mais Ino Casa qui l’arrête ? Son air est nonchalant, mais son flow millimétré et ses prods ultra calibrées l’ont propulsé au sommet en quelques titres. Et quels titres ! Il y tresse des influences maghrébines, hispaniques ou caribéennes, et nous plonge dans ses textes comme dans l’extase d’une teuf improvisée. Vous allez (beaucoup) en entendre parler.', 'https://youtu.be/ruR2Nv1kfX4', 'Vendredi'),

@@ -7,9 +7,9 @@ import Footer from "./components/footer/Footer"
 import Billetterie from './pages/billetterie/billetterie'
 import Programmation from './pages/programmation/programmation'
 import ArtistPage from "./pages/artist/artist"
-import AdminArtistForm from "./pages/admin/artist/form"
-import AdminArtistDelete from "./pages/admin/artist/delete"
-import AdminHomepage from "./pages/admin/homepage_admin"
+import AdminHomepage from "./pages/admin/adminHomepage"
+import AdminArtistForm from "./pages/admin/admin_artist/artistCrudForm"
+import AdminArtistDelete from "./pages/admin/admin_artist/delete"
 
 
 
@@ -25,20 +25,11 @@ function App() {
         <Route path="/billetterie" element={<Billetterie />} />
         <Route path="/mention_legale" element={<MentionLegales />} />
         <Route path="/artist/:id" element={<ArtistPage />} />
-         {/* <Route path="/artist/:id" element={<ArtistPage />} /> */}
         <Route path="/admin" element={<AdminHomepage />} />
-        <Route path="/admin/form/:id?" element={<AdminArtistForm params={{
-          id: 0
-        }} />} />
-        <Route path="/admin/delete" element={<AdminArtistDelete params={{
-          id: 0
-        }} />} />
-       
+        <Route path="/admin/artist-form/:id?" element={<AdminArtistForm /> } />
+        <Route path="/admin/artist-form-delete/:id?" element={ <AdminArtistDelete />} />
       </Routes>
-     
-
       <Footer />
-    
     </div>
   )
 }

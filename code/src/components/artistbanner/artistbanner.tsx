@@ -46,7 +46,7 @@ import { NavLink } from "react-router"
 // import rvfleuse from "../../assets/rvfleuse.jpg"
 // import zaralarsson from "../../assets/zaralarsson.jpg"
 
-import ApiArtistService from "../../services/api_artist_service";
+import ApiArtistService from "../../services/artist_api_service";
 import { useEffect, useState } from "react";
 import type { Artist } from "../../../models/artist";
 // import ArtistListItem from "../artistListItem/ArtistListItem";
@@ -74,7 +74,7 @@ const ArtistBanner = () => {
     const [artists, setArtists] = useState<Artist[]>([])
 
     // default background = orelsan
-    const [bg, setBg] = useState<string>("orelsan.png");
+    const [bg, setBg] = useState<string>("orelsan.jpg");
 
     useEffect(() => {
         new ApiArtistService().selectAll().then((response) => {
@@ -82,14 +82,13 @@ const ArtistBanner = () => {
             console.log(response.data);
         });
     }, []);
-
  
 
     return (
         <div className={styles.artistbanner}
         
         >
-                <img src={`/assets/img/programmation/${bg}`} alt="" />
+            <img src={`/img/programmation/${bg}`} alt="" />
 
             <ul className={styles.artistlist}>
                 {artists?.map((artist) => (
@@ -100,7 +99,7 @@ const ArtistBanner = () => {
                     </li>
                 ))}
                 <li>
-                    <NavLink className={styles.link} to="/concert"> & MANY MORE </NavLink>
+                    <NavLink className={styles.link} to="/programmation"> & MANY MORE </NavLink>
                 </li>
             </ul>
         </div>

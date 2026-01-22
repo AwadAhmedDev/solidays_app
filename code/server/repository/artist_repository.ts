@@ -31,7 +31,6 @@ class ArtistRepository {
 			return error;
 		}
 	};
-
 	
 	public SelectOne = async (
 		data: Partial<Artist>,
@@ -60,27 +59,24 @@ class ArtistRepository {
 		}
 	};
 
-	
 	public insert = async (
 		data: Partial<Artist>,
 	): Promise<QueryResult | unknown> => {
 		
 		const connection = await new MySQLService().connect();
-
 		
 		const sql = `
 
 	INSERT INTO 
 		${process.env.MYSQL_DATABASE}.${this.table}
-	VALUE 
+	VALUES
 	(
 		NULL,
 		:name,
 		:image,
 		:description,
 		:youtubeurl,
-		:concertday,
-		:user_id
+		:concertday
 	)
 	  ;
 		`;
@@ -104,14 +100,12 @@ class ArtistRepository {
 		}
 	};
 
-
 	public update = async (
 		data: Partial<Artist>,
 	): Promise<QueryResult | unknown> => {
-		
+
 		const connection = await new MySQLService().connect();
 
-		
 		const sql = `
 
 	UPDATE 
@@ -122,8 +116,7 @@ class ArtistRepository {
 		image = :image,
 		description = :description,
 		youtubeurl = :youtubeurl,
-		concertday = :concertday,
-		user_id = :user_id
+		concertday = :concertday
 
 	WHERE
 	${this.table}.id = :id
@@ -131,19 +124,13 @@ class ArtistRepository {
 		`;
 
 		try {
-			
 			connection.beginTransaction();
 
-			
 			const [query] = await connection.execute(sql, data);
-
-			
 			connection.commit();
 
 			return query;
-			
 		} catch (error) {
-			
 			connection.rollback();
 
 			return error;

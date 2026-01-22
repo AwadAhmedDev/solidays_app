@@ -1,5 +1,9 @@
 import { Link } from "react-router";
+<<<<<<< HEAD
 import type { ArtistListItemProps } from "../../models/props/ArtistListItemProps";
+=======
+import type { ArtistListItemProps } from "../../models/props/artist_list_item_props";
+>>>>>>> refs/remotes/origin/master
 
 
 

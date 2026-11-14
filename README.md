@@ -58,6 +58,9 @@ code/
 Prérequis : Docker et Docker Compose.
 
 ```bash
+# 0. Créer le fichier d'environnement à partir du modèle
+cp code/.env.development.example code/.env.development
+
 # 1. Démarrer MySQL et le conteneur Node
 docker compose -f docker-compose.dev.yaml up -d
 

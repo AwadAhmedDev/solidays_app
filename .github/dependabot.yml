@@ -8,6 +8,12 @@ updates:
     groups:
       dependencies:
         patterns: ["*"]
+        update-types: ["minor", "patch"]
+    # Les versions majeures (ex. TypeScript 7) cassent souvent la compatibilité :
+    # elles se font à la main, après vérification.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
     open-pull-requests-limit: 3
 
   - package-ecosystem: github-actions

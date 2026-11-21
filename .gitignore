@@ -5,3 +5,11 @@ mysql-data
 .env.*
 !.env.example
 !.env.*.example
+
+# macOS
+.DS_Store
+# build
+code/dist
+
+# images envoyées depuis l admin en production
+code/storage

@@ -1,68 +1,74 @@
 .section {
-  width: 75%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin-inline: auto;
-  padding: 2rem 1rem;
+  padding: 32px 24px 0;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 36px;
 }
 
 .title {
-  font-size: clamp(1.5rem, 3vw, 2.3rem);
-  font-weight: 800;
+  font-family: var(--sd-font-body);
+  font-weight: 900;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   text-transform: uppercase;
-  color: white;
+  color: var(--sd-lime);
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.phantom {
+  width: 100%;
+  border-radius: 6px;
+  opacity: 0.85;
 }
 
 .grid {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  justify-items: center;
-  padding: 0;
-  margin: 0;
+  gap: 24px;
 }
 
 .card {
-  width: 100%;
-  max-width: 300px;
   display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
 .img {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 0.25rem;
-  transition: transform 0.15s ease;
 }
 
-.card a:focus-visible img,
-.card a:hover img {
-  transform: scale(1.02);
-}
-
-.phantom {
-  pointer-events: none;
-}
-
-@media (max-width: 64rem) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 760px) {
+  .featured {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin-inline: auto;
   }
 
   .phantom {
     display: none;
   }
-}
 
-@media (max-width: 40rem) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 }

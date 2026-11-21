@@ -1,0 +1,16 @@
+# Mises à jour automatiques des dépendances (une PR groupée par semaine)
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /code
+    schedule:
+      interval: weekly
+    groups:
+      dependencies:
+        patterns: ["*"]
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

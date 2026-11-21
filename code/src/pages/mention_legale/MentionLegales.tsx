@@ -28,8 +28,8 @@ export default function MentionLegales() {
 
         <h2>Réalisation</h2>
         <p>
-          Projet réalisé en équipe de trois développeurs (branches, pull requests et revues de code sur GitHub) :
-          React, TypeScript, Express, MySQL.
+          Projet réalisé en équipe de trois développeurs — Awad, Manon et Prativa — avec branches, pull requests
+          et revues de code sur GitHub : React, TypeScript, Express, MySQL.
         </p>
 
         <h2>Hébergement</h2>

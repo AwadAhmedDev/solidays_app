@@ -1,0 +1,98 @@
+# Intégration continue : chaque push et chaque pull request vérifient le projet.
+# Déploiement continu : Hostinger redéploie automatiquement chaque push sur master ;
+# le job « smoke » vérifie ensuite que la démo en ligne répond.
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint, types, tests, build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: code
+
+    # Vraie base MySQL pour les tests d'intégration de l'API
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: code/package-lock.json
+
+      - name: Installation
+        run: npm ci
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      - name: Types (front et serveur)
+        run: npm run typecheck
+
+      - name: Tests (unitaires et API sur MySQL)
+        run: npm test
+        env:
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: 3306
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+
+      - name: Build de production
+        run: npm run build
+
+      - name: Audit des dépendances
+        run: npm audit --omit=dev --audit-level=high
+
+  smoke:
+    name: Démo en ligne (après déploiement Hostinger)
+    needs: quality
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    env:
+      DEMO: https://tasteful-lightcoral-yak-94.hostingersite.com
+    steps:
+      - name: Attendre que Hostinger publie cette version, puis vérifier le site
+        run: |
+          # Hostinger redéploie en ~30 s : on attend que la démo réponde avec la page et l'API
+          for i in $(seq 1 30); do
+            if curl -fsS "$DEMO/" | grep -q "clone pédagogique" \
+              && curl -fsS "$DEMO/api/artist" | grep -q '"status":200'; then
+              echo "Démo en ligne : $DEMO"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "La démo ne répond pas correctement" && exit 1
+
+      - name: Écriture refusée sans connexion
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" -X DELETE -H "Content-Type: application/json" -d '{"id":1}' "$DEMO/api/artist")
+          echo "DELETE sans connexion -> $code"
+          test "$code" = "401"

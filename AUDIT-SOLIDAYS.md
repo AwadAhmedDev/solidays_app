@@ -268,3 +268,31 @@ SEO = 66 uniquement à cause du `noindex` voulu.
 - 7 pages sur mobile, sans débordement ;
 - menu mobile ;
 - mode production (pages, 404, en-têtes, compression).
+
+## 11. Mise en ligne (21 novembre 2026)
+
+**Démo :** https://tasteful-lightcoral-yak-94.hostingersite.com (adresse temporaire Hostinger, offre Business u707298094).
+
+**Configuration :**
+- Node 22, type express, dossier `code`, point d'entrée `app.js`, script `build` ;
+- base MySQL `u707298094_solidays`, créée par Hostinger ;
+- **déploiement automatique** à chaque push sur `master` (environ 25 s) ;
+- variables : `NODE_ENV`, `DB_AUTO_INIT`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `SESSION_SECRET`, `PUBLIC_DIR`, `ORIGINS` et `DB_*`. Les valeurs sont dans `code/.env.hostinger`, fichier local ignoré par Git.
+
+**Vérifié en ligne :**
+- 8 pages en 200, vraie 404 (site et API) ;
+- les 11 artistes chargés depuis MySQL ;
+- écriture refusée sans connexion (401), connexion admin OK (cookie httpOnly + Secure) ;
+- compression Brotli, en-têtes de sécurité ;
+- aucune erreur dans la console.
+
+**Lighthouse en ligne** (Performance / Accessibilité / Bonnes pratiques / SEO) :
+
+| Page | Mobile | Ordinateur |
+|---|---|---|
+| Accueil | 97 / 100 / 100 / 66 | 100 / 100 / 100 / 66 |
+| Programmation | 90 / 100 / 100 / 66 | 100 / 100 / 100 / 66 |
+
+SEO = 66 à cause du `noindex` volontaire.
+
+**À savoir :** les images envoyées depuis l'admin sont stockées sur le serveur (`storage/`). Comme pour Ematériel, elles peuvent être perdues lors d'un redéploiement. Les artistes d'origine, eux, font partie du site et ne disparaissent pas.

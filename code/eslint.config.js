@@ -25,8 +25,8 @@ export default defineConfig([
     },
   },
   {
-    // le serveur Express tourne sous Node
-    files: ['server/**/*.ts'],
+    // le serveur Express et les tests tournent sous Node
+    files: ['server/**/*.ts', 'test/**/*.ts', 'app.js'],
     languageOptions: { globals: globals.node },
   },
 ])

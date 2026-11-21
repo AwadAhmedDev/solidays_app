@@ -58,7 +58,7 @@ class Server {
 
 	// En production, Express sert aussi le site construit (dist) et les images envoyées par l'admin.
 	private frontend = () => {
-		const dist = path.resolve("dist");
+		const dist = path.resolve(import.meta.dirname, "../../dist");
 		const uploads = path.resolve(process.env.PUBLIC_DIR ?? "public", "img/programmation");
 
 		this.app.use("/img/programmation", express.static(uploads, { maxAge: "7d" }));

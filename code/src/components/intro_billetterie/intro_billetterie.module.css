@@ -1,88 +1,63 @@
 .intro_billetterie {
-  padding: clamp(1.5rem, 3vw, 3rem) 5%;
-  background-color: #3b1580;
-  color: #ffffff;
+  background: var(--sd-purple);
+  padding: clamp(64px, 8vw, 112px) 24px;
 }
 
 .IntroBilleterie__header {
   text-align: center;
-  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 48px;
 }
 
 .IntroBilleterie__title {
-  font-size: clamp(1rem, 1.5vw, 2rem);
-  font-weight: 800;
+  font-family: var(--sd-font-display);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: #8aa8ff;
-  line-height: 1;
+  line-height: 1.05;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--sd-white);
 }
 
 .IntroBilleterie__title span {
   display: block;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  color: var(--sd-periwinkle);
 }
 
 .IntroBilleterie__list {
   list-style: none;
+  max-width: var(--sd-max);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: clamp(1rem, 0.25vw, 2rem);
-  padding: 0;
-  margin: 0;
-  justify-items: center;
+  gap: 24px;
 }
 
-@media (max-width: 64rem) {
-  .IntroBilleterie__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.IntroBilleterie__item a {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@media (max-width: 40rem) {
-  .IntroBilleterie__list {
-    grid-template-columns: 1fr;
-  }
-}
-
-.IntroBilleterie__item {
-  display: flex;
-}
-
-.IntroBilleterie__card:focus-visible {
-  outline: 3px solid #ffffff;
-  outline-offset: 4px;
+.IntroBilleterie__item a:hover,
+.IntroBilleterie__item a:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
 .IntroBilleterie__image {
   width: 100%;
-  max-width: 300px; 
   height: auto;
-  object-fit: cover;
-  display: block;
 }
 
 .IntroBilleterie__cta {
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: 48px;
   text-align: center;
 }
 
-.IntroBilleterie__button {
-  display: inline-block;
-  padding: 0.9em 2.4em;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border: 2px solid #d85cff;
-  color: #d85cff;
-  text-decoration: none;
-  border-radius: 0.25rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.IntroBilleterie__button:hover,
-.IntroBilleterie__button:focus-visible {
-  background-color: #d85cff;
-  color: #3b1580;
+@media (max-width: 900px) {
+  .IntroBilleterie__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
 }

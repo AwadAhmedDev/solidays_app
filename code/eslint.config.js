@@ -19,5 +19,14 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // variables volontairement ignorées : préfixe _
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+    },
+  },
+  {
+    // le serveur Express tourne sous Node
+    files: ['server/**/*.ts'],
+    languageOptions: { globals: globals.node },
   },
 ])

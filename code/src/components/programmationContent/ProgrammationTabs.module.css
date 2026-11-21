@@ -1,89 +1,98 @@
 .container {
-  width: 100%;
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  max-width: var(--sd-max);
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 96px) 24px;
 }
 
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lead {
+  margin-top: 12px;
+  color: var(--sd-text-soft);
+  font-weight: 700;
+}
+
+/* Onglets des jours */
 .tabs {
   display: flex;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 
 .tab {
-  padding: 0.7rem 1.15rem;
-  border: none;
-  background-color: #040035;
-  color: white;
+  padding: 10px 22px;
+  border: 2px solid var(--sd-magenta);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--sd-white);
+  font-family: var(--sd-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: clamp(0.9rem, 1vw, 1rem);
-  border-radius: 6px;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s;
 }
 
-.tab:first-child {
-  padding: 0.8rem 1.25rem;
-  font-size: clamp(1rem, 1.1vw, 1.15rem);
+.tab:hover {
+  background: rgba(221, 60, 224, 0.2);
 }
 
-.active {
-  background-color: white;
-  color: #040035;
-  border: 1px solid #040035;
+.active,
+.active:hover {
+  background: var(--sd-magenta-dark);
+  border-color: var(--sd-magenta-dark);
 }
 
 .grid {
+  list-style: none;
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.4rem; 
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--sd-white);
 }
 
 .artistImage {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
+  aspect-ratio: 8 / 7;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--sd-navy);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.35rem;
-  }
-
-  .tabs {
-    gap: 0.35rem;
-  }
+.card:hover .artistImage,
+.card:focus-visible .artistImage {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.3rem;
-  }
-
-  .tabs {
-    flex-wrap: wrap;
-    gap: 0.3rem;
-  }
+.name {
+  margin-top: 8px;
+  font-family: var(--sd-font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.25rem;
-  }
+.card:hover .name {
+  color: var(--sd-lime);
+}
 
-  .tab {
-    width: 100%;
-    text-align: center;
-    padding: 0.65rem 0.8rem;
-  }
-
-  .tab:first-child {
-    padding: 0.75rem 0.9rem;
-  }
+.day {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--sd-periwinkle);
 }

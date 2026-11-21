@@ -32,8 +32,9 @@ export default function Footer() {
           </p>
           <p>
             React · TypeScript · Express · MySQL — Développé par{" "}
-            <a href="https://github.com/AwadRoubahAhmed" target="_blank" rel="noopener noreferrer">Awad Ahmed</a>{" "}
-            et ses camarades de promotion.
+            <a href="https://github.com/AwadRoubahAhmed" target="_blank" rel="noopener noreferrer">Awad</a>,{" "}
+            <a href="https://github.com/manonjarzabeck" target="_blank" rel="noopener noreferrer">Manon</a> et{" "}
+            <a href="https://github.com/prativa-k" target="_blank" rel="noopener noreferrer">Prativa</a>.
           </p>
         </div>
       </div>

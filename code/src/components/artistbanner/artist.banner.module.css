@@ -1,113 +1,95 @@
 .artistbanner {
-    position: relative;
-    min-height: 80vh;
-    width: 100%;
-    overflow: hidden;
-  
-    display: flex;
-    align-items: flex-start;
-  
-    padding: clamp(22px, 6vw, 80px);
-    background: #000;
-    color: #fff;
+  position: relative;
+  min-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: #000;
+  color: var(--sd-white);
+}
+
+/* Photo de l'artiste survolé, en fond */
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  animation: fade 0.35s ease;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
   }
-  
-  /* Turn the <img> inside artistbanner into a full background */
-  .artistbanner img {
-    position: absolute;
-    inset: 0;
-  
-    width: 100%;
-    height: 100%;
-  
-    object-fit: cover;
-    object-position: right center; /* puts focus on the right */
-    z-index: 0;
+  to {
+    opacity: 1;
   }
-  
-  /* Optional overlay so text stays readable without making the image "too dark" */
-  .artistbanner::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-  
-    /* light overlay (not too dark) */
-    background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.18) 40%,
-      rgba(0, 0, 0, 0.06) 70%,
-      rgba(0, 0, 0, 0) 100%
-    );
+}
+
+/* Voile à gauche pour la lisibilité des noms */
+.artistbanner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0) 75%);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 96px) 24px;
+}
+
+.kicker {
+  font-family: var(--sd-font-body);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sd-lime);
+  margin-bottom: 20px;
+}
+
+.artistlist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(640px, 100%);
+}
+
+.error {
+  color: #ffc2cd;
+  margin-bottom: 16px;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 28px;
+  color: var(--sd-lime);
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.more:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .artistbanner {
+    min-height: 70vh;
   }
-  
-  /* List above the image */
-  .artistlist {
-    position: relative;
-    z-index: 2;
-  
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  
-    width: min(560px, 70vw);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+
+  .bg {
+    object-position: 65% center;
   }
-  
-  /* Your NavLink uses styles.link */
-  .link {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-  
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    line-height: 0.95;
-  
-    font-size: clamp(28px, 3.8vw, 56px);
-    transition: opacity 0.15s ease, transform 0.15s ease;
-  }
-  
-  .link:hover {
-    opacity: 0.85;
-    transform: translateX(2px);
-  }
-  
-  .link:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 6px;
-  }
-  
-  /* Make "& MANY MORE" smaller */
-  .artistlist li:last-child .link {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    opacity: 0.95;
-  }
-  
-  @media (max-width: 768px) {
-    .artistbanner {
-      min-height: 70vh;
-      padding: 22px;
-    }
-  
-    .artistbanner img {
-      object-position: 60% center;
-    }
-  
-    .artistlist {
-      width: 100%;
-      gap: 12px;
-    }
-  
-    .link {
-      font-size: clamp(22px, 7vw, 40px);
-    }
-  }
-  
+}

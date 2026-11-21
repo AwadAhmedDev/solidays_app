@@ -12,8 +12,11 @@ const Intro_Programmation = () => {
         <div className={styles.IntroProgrammation__visual}>
           <img
             src="/assets/img/YesWeLove/yeswelove.webp"
-            alt="Yes We Love – Message du festival Solidays"
+            alt="Yes We Love"
             className={styles.IntroProgrammation__image}
+            width="230"
+            height="390"
+            loading="lazy"
           />
         </div>
 
@@ -31,12 +34,11 @@ const Intro_Programmation = () => {
           </p>
 
           <p className={styles.IntroProgrammation__closing}>
-            À Solidays on essaye autre chose.
+            À Solidays, on essaye autre chose.
           </p>
 
-          <NavLink to="/programmation" className={styles.IntroProgrammation__button}
-            aria-label="Voir la programmation Solidays">
-            VOIR LA PROGRAMMATION
+          <NavLink to="/programmation" className="sd-btn sd-btn--solid">
+            Voir la programmation
           </NavLink>
         </div>
 

@@ -1,136 +1,146 @@
-
+/* Bandeau collant sombre et translucide, comme sur solidays.org */
 .header {
-    width: 100%;
-    height: 80px;
-    /* position: fixed;
-    top: 0;
-    left: 0; */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #040035;
-    color: white;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--sd-header-h);
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(6px);
+  color: var(--sd-white);
 }
 
-/* logo */
+.inner {
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* logos */
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
+
 .logoSolidays {
-    height: 50px;
-    width: auto;
-}  
+  height: 46px;
+  width: auto;
+}
+
 .bare {
-    height: 50px;
-    width: auto;
-}  
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .logoSolidays2 {
-    height: 50px;
-    width: auto;
-}   
- /* nav */
- .navContainer {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+  height: 34px;
+  width: auto;
 }
+
+/* nav */
 .navigation {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    /* margin-right: 100px; */
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
+
+.dates {
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .navLinks {
-    display: flex;
-    gap: 15px;
-    list-style: none;
-    position: relative;
+  display: flex;
+  gap: 28px;
+  list-style: none;
 }
-li a {
-    display: block;
-    text-decoration: none;
-    color: white; 
-    font-size: 1.2rem;
-    font-family: "Source Sans Pro", sans-serif;
-    padding: 8px 12px;
-    transition: all 0.3s ease;
-} 
+
+.link {
+  display: block;
+  padding: 6px 0;
+  color: var(--sd-white);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.link:hover {
+  color: var(--sd-lime);
+}
+
 .activeLink {
-    /* border-bottom: 2px solid rgb(227, 0, 0); */
-    background-color: rgb(191, 2, 2);
-    padding: 8px 12px;
-    border-radius: 4px;
-}   
-.activeLink:hover {
-  background: rgb(234, 49, 49);
-  color: #fff;
-  transition: scale(1.05);
-} 
-.mobileMenu {
-        display: none;
-    }
+  color: var(--sd-lime);
+  border-bottom-color: var(--sd-lime);
+}
+
 .hamburgerMenu {
-    cursor: pointer;
+  display: none;
+  background: none;
+  border: none;
+  color: var(--sd-white);
+  cursor: pointer;
+  padding: 6px;
+}
+
+.mobileMenu {
+  position: absolute;
+  top: var(--sd-header-h);
+  left: 0;
+  right: 0;
+  height: calc(100dvh - var(--sd-header-h));
+  background: var(--sd-navy);
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.mobileMenu .link {
+  font-family: var(--sd-font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.mobileDates {
+  color: var(--sd-text-soft);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* media queries */
-@media (max-width: 768px) {
-    .header {
-        justify-content: space-between;
-        padding: 10px 20px;
-        opacity: 1;
-    }
-    .logoSolidays {
-        height: 40px;
-        width: auto;
-    }  
-    .bare {
-        height: 40px;
-        width: auto;
-    }  
-    .logoSolidays2 {
-        height: 40px;
-        width: auto;
-    }  
-    .navigation {
-        display: none;
-    }
-    .active {
-        left: 0;
-        transition: left 0.5s;
-    }
-    .hamburgerMenu {
-        display: block;
-        position: absolute;
-        right: 3.5rem;
-        cursor: pointer;
-        font-size: 1.8rem;
-        z-index: 10;
-    }
-    .mobileMenu {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 80px;
-        left: 0px;
-        right: 0;
-        bottom: 0;
-        background-color: #201f1f;
-        padding: 20px 0;
-        z-index: 9;
-        transition: left 0.5s;
-        opacity: 0.9;     
+@media (max-width: 900px) {
+  .navigation {
+    display: none;
   }
-  .navLinks {
-        flex-direction: column;
-        gap: 30px;
-        align-items: center;
-    
-  }  
+
+  .hamburgerMenu {
+    display: block;
+  }
+
+  .logoSolidays {
+    height: 40px;
+  }
+
+  .logoSolidays2 {
+    height: 28px;
+  }
 }
-     

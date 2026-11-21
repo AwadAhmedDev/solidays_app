@@ -1,13 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solidays</title>
+    <title>Solidays – clone pédagogique</title>
+    <meta name="description" content="Reproduction du site du festival Solidays réalisée en équipe de 3 pendant la formation Développeur web et web mobile (Simplon) : React, TypeScript, Express et MySQL." />
+    <!-- Clone de démonstration d'un site existant : il ne doit pas apparaître dans les moteurs de recherche -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#1d1456" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Image principale de l'accueil : téléchargée dès le début, sans attendre le JavaScript -->
+    <link rel="preload" as="image" href="/assets/img/heroSection.webp" fetchpriority="high" />
   </head>
   <body>
     <div id="root"></div>
+    <noscript>Ce site nécessite JavaScript.</noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

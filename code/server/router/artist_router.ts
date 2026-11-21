@@ -1,26 +1,28 @@
 import express from "express";
 import multer from "multer";
 import ArtistController from "../controller/artist_controller";
-
+import { requireAdmin } from "../service/auth_service";
 
 class ArtistRouter {
-
 	private router = express.Router();
 
-	private multer = multer({ dest: `${process.env.PUBLIC_DIR}/img/programmation` });
-
+	// Une seule image de 5 Mo maximum ; le type réel est vérifié ensuite par FileService.
+	private multer = multer({
+		dest: `${process.env.PUBLIC_DIR}/img/programmation`,
+		limits: { fileSize: 5 * 1024 * 1024, files: 1, fields: 10 },
+	});
 
 	public getRoutes = () => {
-		
 		this.router.get("/", new ArtistController().index);
 
 		this.router.get("/:id", new ArtistController().selectOne);
 
-		this.router.post("/", this.multer.any(), new ArtistController().insert);
+		// Écriture : réservée à l'administrateur connecté
+		this.router.post("/", requireAdmin, this.multer.single("image"), new ArtistController().insert);
 
-		this.router.put("/", this.multer.any(), new ArtistController().update);
+		this.router.put("/", requireAdmin, this.multer.single("image"), new ArtistController().update);
 
-		this.router.delete("/", new ArtistController().delete);
+		this.router.delete("/", requireAdmin, new ArtistController().delete);
 
 		return this.router;
 	};

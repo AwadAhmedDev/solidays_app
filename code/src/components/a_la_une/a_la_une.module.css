@@ -1,70 +1,55 @@
+/* « À LA UNE » de solidays.org : titres de cartes vert citron, bouton contour magenta */
 .aLaUne__section {
-  padding: clamp(1rem, 3vw, 2rem) 5%;
-  background-color: #2a1765;
-  color: #ffffff;
+  background: var(--sd-purple);
+  padding: clamp(64px, 8vw, 112px) 24px;
 }
 
 .aLaUne__header {
-  text-align: center;
-  margin-bottom: clamp(1.5rem, 2vw, 2rem);
-}
-
-.aLaUne__title {
-  font-size: clamp(3rem, 6vw, 4rem);
-  font-weight: 800;
-  color: #8aa8ff;
+  margin-bottom: 48px;
 }
 
 .aLaUne__grid {
+  max-width: var(--sd-max);
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(1.5rem, 3vw, 2rem);
-  max-width: 1200px;  
-  margin: 0 auto;     
-}
-
-@media (max-width: 64rem) {
-  .aLaUne__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 40rem) {
-  .aLaUne__grid {
-    grid-template-columns: 1fr;
-  }
+  gap: 32px;
 }
 
 .aLaUne__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 16px;
 }
 
 .aLaUne__image {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
   object-fit: cover;
-  display: block;
-  margin-bottom: 1rem;
-  max-width: 80%;  
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 4px;
 }
 
 .aLaUne__cardTitle {
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  font-weight: 800;
+  font-family: var(--sd-font-body);
+  font-weight: 900;
+  font-size: 1.4rem;
+  line-height: 1.25;
   text-transform: uppercase;
-  color: #c8ff5c;
-  margin-bottom: 0.5rem;
+  color: var(--sd-lime);
 }
 
 .aLaUne__cardText {
-  font-size: 1rem;
-  line-height: 1;
-  color: #ffffff;
-  opacity: 0.9;
-  max-width: 80%;    
-  margin-left: auto;   
-  margin-right: auto; 
+  color: var(--sd-white);
+  line-height: 1.55;
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .aLaUne__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 56px;
+  }
 }

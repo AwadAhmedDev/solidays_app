@@ -1,0 +1,14 @@
+.banner {
+  background: var(--sd-lime);
+  color: var(--sd-navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 16px;
+  line-height: 1.4;
+}
+
+.banner a {
+  color: inherit;
+  text-decoration: underline;
+}

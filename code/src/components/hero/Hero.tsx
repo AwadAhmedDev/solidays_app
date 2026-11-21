@@ -3,26 +3,32 @@ import { NavLink } from "react-router-dom"
 
 export default function Hero() {
   return (
-      <section className={styles.heroSection}>
-          <div className={styles.heroContainer}>
-              <div className={styles.heroContent}>
-                <h1 className={styles.heroTitle}>POUR NOEL </h1>
-          <span className={styles.heroSubtitle}>Offrez (vous) <br /> UN PASS <br />SOLIDAYS</span>
-          {/* <span>
-            Solidays c'est le festival. <br />En achetant un pass Solidays, <br /> vous aurez accès à tous les événements du festival.
-          </span> */}
+    <section className={styles.heroSection} aria-labelledby="hero-title">
+      <img
+        className={styles.heroImage}
+        src="/assets/img/heroSection.webp"
+        alt=""
+        width="1528"
+        height="695"
+        fetchPriority="high"
+      />
+      <div className={styles.heroContent}>
+        <p className={styles.heroEyebrow}>26-28 juin 2026 · Paris-Longchamp</p>
+        <h1 id="hero-title" className={styles.heroTitle}>Pour Noël</h1>
+        <p className={styles.heroSubtitle}>
+          Offrez(-vous) <strong>un pass Solidays</strong>
+        </p>
+        <p className={styles.heroNote}>25 000 pass 3 jours à partir de 39 €</p>
 
-                <div className={styles.heroButtonContainer}>
-                   <NavLink to="/billetterie" className={styles.heroButton}>
-                   Get Started
-                   </NavLink>
-                </div>
-              </div>
-              <div className={styles.heroImage}>
-                {/* Image or graphic can be placed here */}
-                <img src="../../../assets/img/heroSection.png" alt="hero Image" />
-              </div>
+        <div className={styles.heroButtonContainer}>
+          <NavLink to="/billetterie" className="sd-btn sd-btn--solid">
+            Je prends mon pass
+          </NavLink>
+          <NavLink to="/programmation" className={`sd-btn ${styles.heroGhost}`}>
+            La programmation
+          </NavLink>
         </div>
+      </div>
     </section>
   )
 }

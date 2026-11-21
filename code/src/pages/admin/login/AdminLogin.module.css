@@ -1,0 +1,71 @@
+.page {
+  min-height: calc(100vh - var(--sd-header-h) - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background: var(--sd-navy);
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 40px 32px;
+  background: var(--sd-purple);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.title {
+  font-family: var(--sd-font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--sd-periwinkle);
+}
+
+.lead {
+  color: var(--sd-text-soft);
+  margin-bottom: 16px;
+}
+
+.card label {
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.card input {
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--sd-white);
+  font: inherit;
+}
+
+.card input[aria-invalid="true"] {
+  border-color: #ff8fa3;
+}
+
+.card small {
+  min-height: 1.2em;
+  color: #ffb3c1;
+}
+
+.error {
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: rgba(255, 80, 110, 0.15);
+  color: #ffc2cd;
+}
+
+.card button {
+  margin-top: 16px;
+}
+
+.card button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

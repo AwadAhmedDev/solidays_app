@@ -1,131 +1,115 @@
+/* Visuel plein écran et texte à gauche, dans l'esprit de l'affiche solidays.org */
 .heroSection {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.95;
-    background: linear-gradient(
-    120deg,
-    rgb(10,15,180),
-    rgb(30,40,240),
-    rgb(140,40,180),
-    rgb(20,25,200)
-  );
-  background-size: 400% 400%;
-  animation: galaxy 12s ease infinite;
+  position: relative;
+  min-height: calc(100svh - var(--sd-header-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(120deg, #1a1fd1 0%, #2b2ef0 45%, #7a2ad0 100%);
 }
-@keyframes galaxy {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
 }
-.heroContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
+
+/* Voile pour garder le texte lisible sur l'image */
+.heroSection::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(20, 16, 120, 0.92) 0%, rgba(20, 16, 120, 0.7) 38%, rgba(20, 16, 120, 0) 70%);
 }
+
 .heroContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    padding: 0 12rem;
-    height: 100%;
-    color: #fff;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    margin-right: 2rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.heroEyebrow {
+  color: var(--sd-lime);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
 }
 
 .heroTitle {
-    font-size: 3rem;
-    font-weight: bold;                  
-    margin-bottom: 1rem;
+  font-family: var(--sd-font-display);
+  font-weight: 700;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--sd-white);
 }
+
 .heroSubtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  font-family: var(--sd-font-manifesto);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  max-width: 16ch;
 }
-.heroSubtitle::after {
-    content: "Solidays c'est le festival.";
-    padding-left: 0.5rem;
-    margin-bottom: 2rem;
-    animation: textFadeIn 5s ease-in-out infinite;
+
+.heroSubtitle strong {
+  color: var(--sd-lime);
+  font-weight: 700;
 }
-@keyframes textFadeIn {
-    0%, 25% { content: "Solidays c'est le festival."; }
-    26%, 50% { content: "En achetant un pass Solidays,"; }
-    51%, 75% { content: "vous aurez accès à tous les événements du festival."; }
-    76%, 100% { content: "25000 PASS 3J à partir de 39€."; }
+
+.heroNote {
+  color: var(--sd-text-soft);
+  font-size: 1.05rem;
 }
-/* vous aurez accès à tous les événements du festival */
-br {
-    line-height: 1.5;
-    padding: 0.5rem 0;
+
+.heroButtonContainer {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
 }
-.heroButtonContainer a  {
-    text-decoration: none;
+
+.heroGhost {
+  color: var(--sd-white);
+  border-color: var(--sd-white);
 }
-.heroButton {   
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: #ff4757;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.heroButton:hover {
-    background-color: #e84150;
-}
-.heroImage  {
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;   
-    overflow: hidden;
-    z-index: 1;
-}
-.heroImage img {
-    width: 90%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center;
-    border-radius: 100%;
+
+.heroGhost:hover {
+  background: var(--sd-white);
+  border-color: var(--sd-white);
+  color: var(--sd-purple);
 }
 
 @media (max-width: 768px) {
-    .heroContainer {
-        flex-direction: column;
-        padding: 2rem 0;
-    }
-    .heroContent {
-        padding: 0 1rem;
-        margin: 0;
-    }
-    .heroTitle {
-        font-size: 2rem;
-    }
-    .heroSubtitle {
-        font-size: 1.2rem;
-    }
-    .heroImage img {
-        width: 100%;
-        height: 100%;
-        position: static;
-        border-radius: 0px;
-    }
+  .heroSection {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .heroImage {
+    position: relative;
+    height: 52vw;
+    object-position: 85% center;
+    order: 2;
+  }
+
+  .heroSection::after {
+    display: none;
+  }
+
+  .heroContent {
+    padding: 40px 24px 32px;
+    background: linear-gradient(160deg, #1a1fd1, #4b2ad8);
+  }
 }

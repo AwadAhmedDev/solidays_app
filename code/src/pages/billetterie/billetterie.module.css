@@ -1,3 +1,4 @@
 .bgColor {
-    background-color: #040035;
+  background-color: var(--sd-purple);
+  padding-bottom: clamp(48px, 7vw, 96px);
 }

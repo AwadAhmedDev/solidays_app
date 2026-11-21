@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS solidays_dev; 
 
-CREATE DATABASE solidays_dev;
+CREATE DATABASE solidays_dev CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE solidays_dev.role(
     id TINYINT(1) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 

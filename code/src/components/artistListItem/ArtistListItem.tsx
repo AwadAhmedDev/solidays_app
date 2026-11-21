@@ -2,19 +2,19 @@ import { NavLink } from "react-router";
 import styles from "./ArtistListItem.module.css";
 import type { ArtistListItemProps } from "../../models/props/artist_list_item_props";
 
+// Nom d'artiste de la bannière : au survol (ou au focus clavier), sa photo passe en fond.
 const ArtistListItem = ({ artist, setBg }: ArtistListItemProps) => {
+  const show = () => setBg(artist.image);
+
   return (
     <NavLink
       className={styles.link}
       to={`/artist/${artist.id}`}
-      onMouseEnter={() => setBg(artist.image)}
-      onMouseLeave={() =>
-        setBg(artist.name === "ORELSAN" ? artist.image : artist.image)
-      }
-      onTouchStart={() => setBg(artist.image)} // mobile
+      onMouseEnter={show}
+      onFocus={show}
+      onTouchStart={show} // mobile
     >
-      {" "}
-      {artist.name}{" "}
+      {artist.name}
     </NavLink>
   );
 };

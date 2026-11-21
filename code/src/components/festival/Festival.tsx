@@ -1,52 +1,36 @@
 import styles from "../festival/Festival.module.css"
 import { NavLink } from "react-router-dom"
 
+// Les 4 rubriques du festival (comme sur solidays.org)
+const TILES = [
+  { img: "concert", label: "Concerts", w: 900, h: 450 },
+  { img: "talk", label: "Talks", w: 600, h: 600 },
+  { img: "association", label: "Associations", w: 900, h: 450 },
+  { img: "exposition", label: "Expositions", w: 900, h: 450 },
+]
+
 function Festival() {
-    return (
-      <>
-            <div className={styles.festival}>
-                <h2>FESTIVAL</h2>
-                <p>D'INTÉRÊT PUBLIC</p>
+  return (
+    <section className={styles.festival} aria-labelledby="festival-titre">
+      <h2 id="festival-titre" className={styles.title}>
+        Festival <span>d'intérêt public</span>
+      </h2>
 
-                <div className={styles.con}>
-                    <div className={styles.festivalcon}>
-                        <NavLink
-                        className={styles.festivalcard}    to={"/"}>
-                            <img src="../../../assets/img/concert.jpg" alt="concert image" /> 
-                            <h3>Concert</h3>
-                        </NavLink>
-                    </div>
-
-                    <div className={styles.festivalcon}>
-                        <NavLink to={"/"}
-                         className={styles.festivalcard}>
-                            <img src="../../../assets/img/talk.jpg" alt="talk image" />
-                            <h3>Talk</h3>
-                        </NavLink>
-                    </div>
-                </div>
-
-                <div className={styles.con}>
-                    <div className={styles.festivalcon}>
-                        <NavLink  className={styles.festivalcard}
-                            to={"/"}>
-                            <img src="../../../assets/img/association.jpg" alt="concert image" />
-                            <h3>Association</h3>
-                         </NavLink>
-                    </div>
-
-                    <div className={styles.festivalcon}>
-                        <NavLink to={"/"}
-                         className={styles.festivalcard}>
-                            <img src="../../../assets/img/exposition.jpg
-                            " alt="talk image" />
-                            <h3>Expositions</h3>
-                        </NavLink>
-                    </div>
-                </div>
-    
-            </div>
-     </>
+      <div className={styles.con}>
+        {TILES.map((tile) => (
+          <NavLink key={tile.img} className={styles.festivalcard} to="/festival">
+            <img
+              src={`/assets/img/${tile.img}.webp`}
+              alt=""
+              width={tile.w}
+              height={tile.h}
+              loading="lazy"
+            />
+            <h3>{tile.label}</h3>
+          </NavLink>
+        ))}
+      </div>
+    </section>
   )
 }
 

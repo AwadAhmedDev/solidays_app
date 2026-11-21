@@ -1,19 +1,151 @@
+/* Charte reprise de solidays.org : polices, couleurs et boutons du site d'origine */
+:root {
+  --sd-purple: #1d1456;      /* fond des rubriques (À la une, billetterie) */
+  --sd-navy: #050d30;        /* fond profond (manifeste, pied de page) */
+  --sd-night: #040035;       /* bandeau de navigation */
+  --sd-periwinkle: #7a90ff;  /* grands titres de rubrique */
+  --sd-lime: #d5f865;        /* titres des cartes */
+  --sd-lime-strong: #cbf742; /* liens mis en avant (Shop, Don) */
+  --sd-magenta: #dd3ce0;     /* boutons (contour, texte sur fond sombre) */
+  --sd-magenta-dark: #b42db8; /* fond des boutons pleins : texte blanc lisible (contraste 5,2:1) */
+  --sd-yellow: #fdc100;
+  --sd-white: #ffffff;
+  --sd-text-soft: rgba(255, 255, 255, 0.82);
+
+  --sd-font-body: "Lato", system-ui, sans-serif;
+  --sd-font-display: "Unbounded Variable", "Unbounded", "Lato", sans-serif;
+  --sd-font-manifesto: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", "Lato", sans-serif;
+
+  --sd-header-h: 80px;
+  --sd-max: 1200px;
+}
+
 /* reset */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Source Sans Pro", sans-serif;
-  background-color: #f5f5f5;
-  line-height: 1.6;
-  font-size: 16px;
+html {
+  scroll-behavior: smooth;
 }
 
-/* .container {
-  max-width: 1200px;
+body {
+  font-family: var(--sd-font-body);
+  background-color: var(--sd-purple);
+  color: var(--sd-white);
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Le contenu occupe au moins l'écran : le pied de page ne « saute » pas
+   quand les données (programmation, fiche artiste) arrivent */
+#contenu {
+  min-height: calc(100vh - var(--sd-header-h));
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sd-lime);
+  outline-offset: 3px;
+}
+
+/* Conteneur centré */
+.sd-container {
+  width: 100%;
+  max-width: var(--sd-max);
   margin: 0 auto;
-  padding: 0 20px;
-} */
+  padding: 0 24px;
+}
+
+/* Grand titre de rubrique (« À LA UNE ») */
+.sd-section-title {
+  font-family: var(--sd-font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.125rem);
+  line-height: 1.1;
+  color: var(--sd-periwinkle);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Bouton contour magenta du site d'origine (« EN SAVOIR + ») */
+.sd-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--sd-magenta);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--sd-magenta);
+  font-family: var(--sd-font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sd-btn:hover {
+  background: var(--sd-magenta-dark);
+  border-color: var(--sd-magenta-dark);
+  color: var(--sd-white);
+}
+
+/* Variante pleine (« LIRE LE MANIFESTE ») */
+.sd-btn--solid {
+  background: var(--sd-magenta-dark);
+  border-color: var(--sd-magenta-dark);
+  color: var(--sd-white);
+}
+
+.sd-btn--solid:hover {
+  background: #96229a;
+  border-color: #96229a;
+}
+
+/* Messages d'état (chargement, erreur, liste vide) */
+.sd-status {
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--sd-text-soft);
+  font-size: 1.1rem;
+}
+
+.sd-status--error {
+  color: #ffb3c1;
+}
+
+/* Texte réservé aux lecteurs d'écran */
+.sd-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

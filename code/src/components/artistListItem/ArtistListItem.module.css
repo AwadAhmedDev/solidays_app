@@ -1,3 +1,18 @@
-/* .link {
-    background-color: blanchedalmond;
-} */
+/* Noms en grandes capitales, comme la liste d'artistes de solidays.org */
+.link {
+  display: inline-block;
+  color: var(--sd-white);
+  text-decoration: none;
+  font-family: var(--sd-font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.05;
+  font-size: clamp(1.6rem, 3.6vw, 3.2rem);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--sd-lime);
+  transform: translateX(6px);
+}

@@ -1,88 +1,80 @@
 .festival {
-    width: 100%;
-    background: linear-gradient(#030d31, #362686, #3d4eaf);
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 2rem;
-    box-sizing: border-box;
-  }
-  
-  h2, p {
-    color: #7b90ff;
-  }
-  
-  /* container of cards */
+  background: var(--sd-navy);
+  padding: clamp(64px, 8vw, 112px) 24px;
+}
+
+.title {
+  font-family: var(--sd-font-display);
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+  color: var(--sd-periwinkle);
+  margin-bottom: 48px;
+}
+
+.title span {
+  display: block;
+  font-size: 0.42em;
+  color: var(--sd-white);
+}
+
+.con {
+  max-width: var(--sd-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Tuile : photo plein cadre et titre en bas */
+.festivalcard {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.festivalcard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.festivalcard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(5, 13, 48, 0.85) 0%, rgba(5, 13, 48, 0) 55%);
+}
+
+.festivalcard h3 {
+  position: absolute;
+  left: 24px;
+  bottom: 18px;
+  z-index: 1;
+  font-family: var(--sd-font-display);
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  text-transform: uppercase;
+  color: var(--sd-white);
+}
+
+.festivalcard:hover img,
+.festivalcard:focus-visible img {
+  transform: scale(1.05);
+}
+
+.festivalcard:hover h3 {
+  color: var(--sd-lime);
+}
+
+@media (max-width: 720px) {
   .con {
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    padding: 2rem;
-    box-sizing: border-box;
+    grid-template-columns: 1fr;
   }
-  
-  /* each card wrapper */
-  .festivalcon {
-    width: 100%;
-    max-width: 370px; /* desktop card size */
-    box-sizing: border-box;
-  }
-  
-  /* card */
-  .festivalcard {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    border-radius: 12px; /* optional */
-  }
-  
-  /* IMPORTANT: remove the max-width limitation */
-  .festivalcard img {
-    width: 100%;
-    max-width: none;     /* ✅ this fixes your screenshot issue */
-    height: 200px;       /* set a nice consistent height */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease-in;
-  }
-  
-  .festivalcard h3 {
-    position: absolute;
-    top: 60px;
-    left: 3px;
-    color: white;
-  }
-  
-  .festival h2:hover {
-    color: white;
-  }
-  
-  .festivalcard:hover img {
-    transform: scale(1.08);
-  }
-  
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .festival {
-      padding: 1rem;
-      font-size: 1.2rem;
-    }
-  
-    .con {
-      padding: 1rem;
-      gap: 2rem;
-    }
-  
-    .festivalcon {
-      max-width: 100%;   /* ✅ full width card on mobile */
-    }
-  
-    .festivalcard img {
-      height: 300px; 
-      width: 100%;    /* a bit smaller for phones */
-    }
-  }
-  
+}

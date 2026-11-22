@@ -19,8 +19,8 @@ Application web full stack réalisée en **équipe de 3 développeurs** pendant 
 
 | | Développeur·se | Commits |
 |---|---|---|
-| 👤 | **Awad** — [@AwadAhmedDev](https://github.com/AwadAhmedDev) | 58 |
-| 👤 | **Prativa** — [@prativa-k](https://github.com/prativa-k) | 52 |
+| 👤 | **Awad** — [@AwadAhmedDev](https://github.com/AwadAhmedDev) | 56 |
+| 👤 | **Prativa** — [@prativa-k](https://github.com/prativa-k) | 46 |
 | 👤 | **Manon** — [@manonjarzabeck](https://github.com/manonjarzabeck) | 30 |
 
 Organisation :
@@ -56,10 +56,10 @@ Organisation :
 
 ## Qualité
 
-| Lighthouse (démo en ligne) | Performance | Accessibilité | Bonnes pratiques |
+| Lighthouse (démo en ligne, 22/11/2026) | Performance | Accessibilité | Bonnes pratiques |
 |---|---|---|---|
 | Ordinateur | **100** | **100** | **100** |
-| Mobile | **97** | **100** | **100** |
+| Mobile | **94** | **100** | **100** |
 
 Le SEO n'apparaît pas : le site est volontairement en `noindex`, puisqu'il s'agit d'un clone.
 
